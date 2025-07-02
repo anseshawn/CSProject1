@@ -1,0 +1,253 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013darkGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013darkGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013lightGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013lightGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013white.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013white.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016black.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016black.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016colorful.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016colorful.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016darkGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016darkGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.data.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.data.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.advancedfunctions.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.advancedfunctions.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.basicfunctions.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.basicfunctions.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.languagepackages.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.languagepackages.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.common.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.common.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.pivot.pivottables.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.pivot.pivottables.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.report.reportsheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.report.reportsheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.all.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.all.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.automerge.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.automerge.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.barcode.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.barcode.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.bindings.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.bindings.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.calcengine.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.calcengine.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.cellstate.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.cellstate.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.celltypes.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.celltypes.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.charts.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.charts.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.comments.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.comments.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.components.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.components.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.conditionalformatting.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.conditionalformatting.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.contextmenu.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.contextmenu.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.core.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.core.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.datavalidation.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.datavalidation.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.dragmerge.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.dragmerge.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.fill.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.fill.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.filter.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.filter.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.floatingobjects.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.floatingobjects.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulapanel.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulapanel.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulatextbox.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulatextbox.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.ganttsheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.ganttsheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.hyperlink.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.hyperlink.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.inputmask.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.inputmask.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.io.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.io.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.legacycharts.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.legacycharts.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.namebox.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.namebox.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlinecolumn.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlinecolumn.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlines.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlines.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.pdf.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.pdf.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.print.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.print.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.resources.ko.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.resources.ko.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.search.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.search.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.shapes.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.shapes.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.slicers.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.slicers.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.spacing.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.spacing.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.sparklines.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.sparklines.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.statusbar.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.statusbar.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tables.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tables.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tablesheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tablesheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.touch.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.touch.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.js",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.min.js",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.min.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Project1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Project1.props",
+      "PackagePath": "build\\Project1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Project1.props",
+      "PackagePath": "buildMultiTargeting\\Project1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Project1.props",
+      "PackagePath": "buildTransitive\\Project1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
