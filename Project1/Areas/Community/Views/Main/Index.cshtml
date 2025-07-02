@@ -7,7 +7,7 @@
 @{
     <html>
     <head>
-        <title>메인</title>
+        <title>커뮤니티 메인</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,7 +33,7 @@
                 height: 100%;
             }
 
-            .menubar {
+            .contentMain {
                 border: 1px solid #DDD;
                 padding: 10rem 7rem;
             }
@@ -65,10 +65,10 @@
 
             window.onload = function() {
                 eventbind();
+                loadBoardList();
             }
 
             function eventbind() {
-                console.log(u_id);
                 if(u_id == "") {
                     document.querySelector(".loginMenu").style.display = "flex";
                     document.querySelector(".logoutMenu").style.display = "none";
@@ -117,6 +117,10 @@
                     }
                 });
             }
+
+            function loadBoardList() {
+
+            }
         </script>
     </head>
     <body>
@@ -142,12 +146,9 @@
             </div>
         </nav>
         <div class="container d-flex flex-column justify-content-center align-items-center center-container">
-            <div class="menubar">
-                <h1 class="mb-4" style="color: #555;">Your Marker</h1>
+            <div class="contentMain">
                 <div class="d-flex flex-column gap-3 text-center w-100" >
-                    <a href="#">Knitting</a>
-                    <a href="#">Blog</a>
-                    <a href="/Community/Main/Index">Community</a>
+                    
                 </div>
             </div>
         </div>

@@ -1,13 +1,10 @@
 ﻿@*
-   메인
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-    String u_id = ViewData["u_id"] as String ?? String.Empty;
-}
 @{
     <html>
     <head>
-        <title>메인</title>
+        <title>회원 전용 메뉴</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -59,64 +56,11 @@
             }
         </style>
         <script>
-            'use strict';
 
-            let u_id = '@u_id';
-
-            window.onload = function() {
-                eventbind();
+            window.onload = function () {
+                alert("회원 전용 메뉴입니다.");
             }
 
-            function eventbind() {
-                console.log(u_id);
-                if(u_id == "") {
-                    document.querySelector(".loginMenu").style.display = "flex";
-                    document.querySelector(".logoutMenu").style.display = "none";
-                }
-                else {
-                    document.querySelector(".loginMenu").style.display = "none";
-                    document.querySelector(".logoutMenu").style.display = "flex";
-                }
-            }
-
-            function memberLogout() {
-                $.ajax({
-                    url: "/Main/MemberLogout",
-                    type: "POST",
-                    data: {
-                        u_id: u_id
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                //title: '성공',
-                                text: response.message,
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                confirmButtonText: "확인"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = response.redirectUrl;
-                                }
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '실패',
-                                text: response.message
-                            });
-                        }
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: 'error',
-                            title: '서버 오류',
-                            text: '잠시 후 다시 시도해주세요.'
-                        });
-                    }
-                });
-            }
         </script>
     </head>
     <body>
@@ -133,21 +77,16 @@
                             <a class="nav-link" href="/Main/JoinView">회원가입</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav logoutMenu mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link btn" onclick="memberLogout()">로그아웃</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
         <div class="container d-flex flex-column justify-content-center align-items-center center-container">
             <div class="menubar">
                 <h1 class="mb-4" style="color: #555;">Your Marker</h1>
-                <div class="d-flex flex-column gap-3 text-center w-100" >
+                <div class="d-flex flex-column gap-3 text-center w-100">
                     <a href="#">Knitting</a>
                     <a href="#">Blog</a>
-                    <a href="/Community/Main/Index">Community</a>
+                    <a href="#">Community</a>
                 </div>
             </div>
         </div>
