@@ -38,24 +38,60 @@
                 padding: 10rem 7rem;
             }
 
-            a:link {
+            .navbar a:link {
                 color: #DDD;
                 text-decoration: none;
             }
 
-            a:visited {
+            .navbar a:visited {
                 color: #DDD;
                 text-decoration: none;
             }
 
-            a:hover {
+            .navbar a:hover {
                 color: #FFF;
                 text-decoration: none;
             }
 
-            a:active {
+            .navbar a:active {
                 color: #FFF;
                 text-decoration: none;
+            }
+
+            .board-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .board-list li {
+                display: flex;
+                border-bottom: 1px solid #ccc;
+                padding: 10px 0;
+            }
+
+            .board-list li.header {
+                font-weight: bold;
+                background-color: #f0f0f0;
+            }
+
+            .board-list li div {
+                flex: 1;
+                padding: 0 10px;
+            }
+
+            .funcBtn_A {
+                padding: 0.5rem 1rem;
+                color: #fff;
+                background: #888;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+            }
+            .funcBtn_A:hover {
+                color: #fff;
+                background: #555;
             }
         </style>
         <script>
@@ -76,6 +112,10 @@
                 else {
                     document.querySelector(".loginMenu").style.display = "none";
                     document.querySelector(".logoutMenu").style.display = "flex";
+                }
+
+                document.getElementById("writeBtn").onclick = function() {
+
                 }
             }
 
@@ -119,7 +159,48 @@
             }
 
             function loadBoardList() {
+                fetch("/Community/Main/BoardList?CatCls=01", {
+                    method: "GET"
+                })
+                .then(response => response.json())
+                .then(resultSet => {
+                    if (resultSet.code != 200) {
+						console.log("GET BoardList: NG");
+						return false;
+					}
+					if (resultSet.data.length == 0 || resultSet.message != "OK") {
+						console.log("GET BoardList: No data");
+					}
+                    else {
+                        console.log(resultSet.data);
+                        for(let i = 0; i < resultSet.data.length; i++) {
+                            addBoardList(resultSet.data[i], i);
+                        }
+                    }
+                })
+                .catch(() => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: '서버 오류',
+                        text: '잠시 후 다시 시도해주세요.'
+                    });
+                });
+            }
 
+            function addBoardList(data, index) {
+                console.log(data);
+                let main = document.querySelector(".contentMain");
+				let board = main.querySelector(".board-list");
+                let template = document.querySelector("template.BoardList");
+				let clone = document.importNode(template.content, true);
+                let listBlock = clone.querySelector(".board-list");
+
+                listBlock.querySelector(".idx").textContent = data.idx;
+                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Board?idx=${data.idx}">${data.b_title}</a>`;
+                listBlock.querySelector(".B_Author").textContent = data.b_author;
+                listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
+
+                board.appendChild(clone);
             }
         </script>
     </head>
@@ -145,13 +226,54 @@
                 </div>
             </div>
         </nav>
-        <div class="container d-flex flex-column justify-content-center align-items-center center-container">
+        <div class="container flex-column center-container">
             <div class="contentMain">
-                <div class="d-flex flex-column gap-3 text-center w-100" >
-                    
+                <div class="row justify-content-end mt-2 mb-2">
+                    <div class="col text-end">
+                        <button type="button" id="writeBtn" class="btn funcBtn_A">글쓰기</button>
+                    </div>
                 </div>
+                <div class="row justify-content-center align-items-center mt-2 mb-2">
+                    <div class="col">
+                        <div class="text-center w-100" >
+                            <ul class="board-list">
+                                <li class="header">
+                                    <div>번호</div>
+                                    <div>제목</div>
+                                    <div>작성자</div>
+                                    <div>작성일</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <span class="page-link">Previous</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">2</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <template class="BoardList" id="">
+            <ul class="board-list">
+                <li>
+                    <div class="idx"></div>
+                    <div class="B_title"></div>
+                    <div class="B_Author"></div>
+                    <div class="EnterDate"></div>
+                </li>
+            </ul>
+        </template>
     </body>
     </html>
 }

@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Project1.Areas.Community.DTO;
 using Project1.Areas.Community.Services;
+using Project1.Areas.Page.DTO;
+using Project1.Areas.Page.Service;
+using Project1.DTO;
+using System.Collections.Generic;
 
 namespace Project1.Areas.Community.Controllers
 {
@@ -9,6 +14,7 @@ namespace Project1.Areas.Community.Controllers
     {
         String? u_id = String.Empty;
         private readonly MainService mainService = new();
+        private readonly PageService pageService = new();
 
         [HttpGet]
         public ActionResult Index()
@@ -17,6 +23,16 @@ namespace Project1.Areas.Community.Controllers
             if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
             ViewData["u_id"] = u_id;
             return View();
+        }
+
+        [HttpGet]
+        public async Task<ResponseDTO<List<BoardDTO>>> BoardList(String CatCls, Int32? Pag, String? Section, String? SearchStr)
+        {
+            Int32 TotRecCnt = await mainService.GetBoardListCount(CatCls, Section, SearchStr);
+            Int32 PageSize = 10;
+            PageDTO page = pageService.Pagination(Pag ?? 1, PageSize, TotRecCnt, CatCls, Section, SearchStr);
+            List<BoardDTO> result = await mainService.GetBoardList(CatCls, Pag ?? -1, PageSize, Section, SearchStr);
+            return new ResponseDTO<List<BoardDTO>> { Code = 200, Message = "OK", Data = result };
         }
 
     }
