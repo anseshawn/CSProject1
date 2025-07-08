@@ -7,7 +7,7 @@
 @{
     <html>
     <head>
-        <title>커뮤니티 메인</title>
+        <title>글쓰기 - 커뮤니티</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -19,6 +19,9 @@
         <!-- 커스텀알럿 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- summernote -->
+        <script src="~/lib/summernote/summernote-bs5.js"></script>
+        <link href="~/lib/summernote/summernote-bs5.css" rel="stylesheet" />
         <style>
             body, html {
                 height: 100%;
@@ -101,7 +104,6 @@
 
             window.onload = function() {
                 eventbind();
-                loadBoardList();
             }
 
             function eventbind() {
@@ -113,9 +115,14 @@
                     document.querySelector(".loginMenu").style.display = "none";
                     document.querySelector(".logoutMenu").style.display = "flex";
                 }
-
+                $('#B_content').summernote({
+                    height: 300,                 // set editor height
+                    minHeight: null,             // set minimum height of editor
+                    maxHeight: null,             // set maximum height of editor
+                    focus: true                  // set focus to editable area after initializing summernote
+                });
                 document.getElementById("writeBtn").onclick = function() {
-                    window.location.href = "/Community/Board/WriteBoard";
+                    writeBoard();
                 }
             }
 
@@ -158,50 +165,58 @@
                 });
             }
 
-            function loadBoardList() {
-                fetch("/Community/Main/BoardList?CatCls=01", {
-                    method: "GET"
-                })
-                .then(response => response.json())
-                .then(resultSet => {
-                    if (resultSet.code != 200) {
-						console.log("GET BoardList: NG");
-						return false;
-					}
-					if (resultSet.data.length == 0 || resultSet.message != "OK") {
-						console.log("GET BoardList: No data");
-					}
-                    else {
-                        console.log(resultSet.data);
-                        for(let i = 0; i < resultSet.data.length; i++) {
-                            addBoardList(resultSet.data[i], i);
+            function writeBoard() {
+                let B_title = document.getElementById("B_title").value.trim();
+                if(B_title == "") {
+                    alert("제목을 입력하세요.");
+                    return false;
+                }
+                let B_content = document.getElementById("B_content").value.trim();
+                if (B_content == "") {
+                    alert("내용을 입력하세요.");
+                    return false;
+                }
+
+                $.ajax({
+                    url: "/Community/Board/SetBoardContent",
+                    type: "POST",
+                    data: {
+                        CatCls: "01",
+                        B_title: B_title,
+                        B_content: B_content,
+                        u_id: u_id
+                    },
+                    beforeSend: function () {
+                        $("#loading").addClass("overlaySpinner");
+                    },
+                    success: function (response) {
+                        $("#loading").removeClass("overlaySpinner");
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "등록에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
                         }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "게시글을 등록했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = "/Community/Main/Index";
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
                     }
-                })
-                .catch(() => {
-                    Swal.fire({
-                        icon: 'error',
-                        title: '서버 오류',
-                        text: '잠시 후 다시 시도해주세요.'
-                    });
                 });
             }
 
-            function addBoardList(data, index) {
-                console.log(data);
-                let main = document.querySelector(".contentMain");
-				let board = main.querySelector(".board-list");
-                let template = document.querySelector("template.BoardList");
-				let clone = document.importNode(template.content, true);
-                let listBlock = clone.querySelector(".board-list");
-
-                listBlock.querySelector(".idx").textContent = data.idx;
-                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Board/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
-                listBlock.querySelector(".B_Author").textContent = data.b_author;
-                listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
-
-                board.appendChild(clone);
-            }
         </script>
     </head>
     <body>
@@ -227,53 +242,33 @@
             </div>
         </nav>
         <div class="container flex-column center-container">
+            <div id="loading"></div>
             <div class="contentMain">
-                <div class="row justify-content-end mt-2 mb-2">
-                    <div class="col text-end">
-                        <button type="button" id="writeBtn" class="btn funcBtn_A">글쓰기</button>
-                    </div>
-                </div>
                 <div class="row justify-content-center align-items-center mt-2 mb-2">
                     <div class="col">
-                        <div class="text-center w-100" >
-                            <ul class="board-list">
-                                <li class="header">
-                                    <div>번호</div>
-                                    <div>제목</div>
-                                    <div>작성자</div>
-                                    <div>작성일</div>
-                                </li>
-                            </ul>
-                        </div>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td style="width:20%;"><input type="text" value="Community" class="form-control" disabled /></td>
+                                <td style="width:80%;">
+                                    <input type="text" name="B_title" id="B_title" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <textarea name="B_content" id="B_content" value=""></textarea>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">2</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                <hr />
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-auto">
+                        <button type="button" id="writeBtn" class="btn funcBtn_A">등록하기</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <template class="BoardList" id="">
-            <ul class="board-list">
-                <li>
-                    <div class="idx"></div>
-                    <div class="B_title"></div>
-                    <div class="B_Author"></div>
-                    <div class="EnterDate"></div>
-                </li>
-            </ul>
-        </template>
     </body>
     </html>
 }
