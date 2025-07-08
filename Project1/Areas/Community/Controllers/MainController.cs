@@ -4,7 +4,6 @@ using Project1.Areas.Community.Services;
 using Project1.Areas.Page.DTO;
 using Project1.Areas.Page.Service;
 using Project1.DTO;
-using System.Collections.Generic;
 
 namespace Project1.Areas.Community.Controllers
 {
@@ -34,6 +33,5 @@ namespace Project1.Areas.Community.Controllers
             List<BoardDTO> result = await mainService.GetBoardList(CatCls, Pag ?? -1, PageSize, Section, SearchStr);
             return new ResponseDTO<List<BoardDTO>> { Code = 200, Message = "OK", Data = result };
         }
-
     }
 }
