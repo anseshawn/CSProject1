@@ -1,0 +1,17 @@
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Project1.exe
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\web.config
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\web.Debug.config
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Project1.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Project1.deps.json
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Project1.runtimeconfig.json
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Project1.pdb
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNet.Identity.Core.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\RestSharp.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\net6.0\System.Data.SqlClient.dll
+C:\Users\333220\source\repos\Project1\Project1\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Data.SqlClient.dll

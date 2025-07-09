@@ -1,0 +1,957 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\css\\loadingAnimation.css",
+      "PackagePath": "staticwebassets\\css\\loadingAnimation.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\css\\loadingAnimation\\overlaySpinner.css",
+      "PackagePath": "staticwebassets\\css\\loadingAnimation\\overlaySpinner.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013darkGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013darkGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013lightGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013lightGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013white.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2013white.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016black.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016black.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016colorful.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016colorful.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016darkGray.17.1.9.css",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\css\\gc.spread.sheets.excel2016darkGray.17.1.9.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.data.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.data.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.advancedfunctions.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.advancedfunctions.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.basicfunctions.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.basicfunctions.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.languagepackages.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.calcengine.languagepackages.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.common.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.common.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.pivot.pivottables.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.pivot.pivottables.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.report.reportsheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.report.reportsheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.all.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.all.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.automerge.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.automerge.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.barcode.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.barcode.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.bindings.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.bindings.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.calcengine.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.calcengine.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.cellstate.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.cellstate.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.celltypes.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.celltypes.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.charts.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.charts.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.comments.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.comments.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.components.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.components.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.conditionalformatting.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.conditionalformatting.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.contextmenu.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.contextmenu.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.core.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.core.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.datavalidation.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.datavalidation.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.dragmerge.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.dragmerge.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.fill.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.fill.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.filter.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.filter.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.floatingobjects.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.floatingobjects.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulapanel.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulapanel.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulatextbox.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.formulatextbox.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.ganttsheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.ganttsheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.hyperlink.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.hyperlink.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.inputmask.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.inputmask.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.io.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.io.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.legacycharts.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.legacycharts.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.namebox.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.namebox.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlinecolumn.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlinecolumn.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlines.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.outlines.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.pdf.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.pdf.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.print.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.print.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.resources.ko.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.resources.ko.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.search.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.search.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.shapes.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.shapes.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.slicers.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.slicers.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.spacing.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.spacing.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.sparklines.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.sparklines.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.statusbar.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.statusbar.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tables.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tables.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tablesheet.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.tablesheet.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.touch.17.1.9.min.js",
+      "PackagePath": "staticwebassets\\lib\\SpreadJS\\17.1.9\\js\\gc.spread.sheets.touch.17.1.9.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.js",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.min.js",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\fileSaver\\FileSaver.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\fileSaver\\FileSaver.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\font\\summernote.eot",
+      "PackagePath": "staticwebassets\\lib\\summernote\\font\\summernote.eot"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\font\\summernote.hash",
+      "PackagePath": "staticwebassets\\lib\\summernote\\font\\summernote.hash"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\font\\summernote.ttf",
+      "PackagePath": "staticwebassets\\lib\\summernote\\font\\summernote.ttf"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\font\\summernote.woff",
+      "PackagePath": "staticwebassets\\lib\\summernote\\font\\summernote.woff"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\font\\summernote.woff2",
+      "PackagePath": "staticwebassets\\lib\\summernote\\font\\summernote.woff2"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ar-AR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ar-AR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ar-AR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ar-AR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ar-AR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ar-AR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-az-AZ.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-az-AZ.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-az-AZ.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-az-AZ.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-az-AZ.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-az-AZ.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bg-BG.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bg-BG.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bg-BG.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bg-BG.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bg-BG.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bg-BG.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bn-BD.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bn-BD.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bn-BD.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bn-BD.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-bn-BD.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-bn-BD.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ca-ES.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ca-ES.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ca-ES.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ca-ES.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ca-ES.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ca-ES.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-cs-CZ.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-cs-CZ.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-cs-CZ.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-cs-CZ.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-cs-CZ.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-cs-CZ.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-da-DK.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-da-DK.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-da-DK.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-da-DK.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-da-DK.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-da-DK.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-CH.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-CH.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-CH.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-CH.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-CH.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-CH.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-DE.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-DE.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-DE.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-DE.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-de-DE.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-de-DE.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-el-GR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-el-GR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-el-GR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-el-GR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-el-GR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-el-GR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-en-US.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-en-US.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-en-US.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-en-US.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-en-US.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-en-US.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-ES.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-ES.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-ES.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-ES.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-ES.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-ES.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-EU.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-EU.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-EU.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-EU.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-es-EU.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-es-EU.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fa-IR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fa-IR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fa-IR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fa-IR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fa-IR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fa-IR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fi-FI.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fi-FI.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fi-FI.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fi-FI.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fi-FI.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fi-FI.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fr-FR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fr-FR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fr-FR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fr-FR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-fr-FR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-fr-FR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-gl-ES.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-gl-ES.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-gl-ES.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-gl-ES.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-gl-ES.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-gl-ES.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-he-IL.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-he-IL.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-he-IL.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-he-IL.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-he-IL.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-he-IL.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hr-HR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hr-HR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hr-HR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hr-HR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hr-HR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hr-HR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hu-HU.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hu-HU.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hu-HU.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hu-HU.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-hu-HU.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-hu-HU.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-id-ID.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-id-ID.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-id-ID.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-id-ID.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-id-ID.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-id-ID.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-it-IT.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-it-IT.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-it-IT.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-it-IT.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-it-IT.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-it-IT.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ja-JP.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ja-JP.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ja-JP.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ja-JP.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ja-JP.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ja-JP.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ko-KR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ko-KR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ko-KR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ko-KR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ko-KR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ko-KR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LT.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LT.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LT.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LT.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LT.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LT.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LV.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LV.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LV.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LV.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-lt-LV.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-lt-LV.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-mn-MN.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-mn-MN.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-mn-MN.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-mn-MN.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-mn-MN.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-mn-MN.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nb-NO.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nb-NO.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nb-NO.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nb-NO.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nb-NO.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nb-NO.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nl-NL.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nl-NL.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nl-NL.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nl-NL.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-nl-NL.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-nl-NL.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pl-PL.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pl-PL.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pl-PL.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pl-PL.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pl-PL.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pl-PL.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-BR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-BR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-BR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-BR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-BR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-BR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-PT.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-PT.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-PT.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-PT.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-pt-PT.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-pt-PT.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ro-RO.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ro-RO.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ro-RO.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ro-RO.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ro-RO.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ro-RO.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ru-RU.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ru-RU.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ru-RU.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ru-RU.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ru-RU.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ru-RU.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sk-SK.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sk-SK.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sk-SK.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sk-SK.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sk-SK.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sk-SK.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sl-SI.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sl-SI.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sl-SI.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sl-SI.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sl-SI.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sl-SI.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS-Latin.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS-Latin.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS-Latin.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS-Latin.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS-Latin.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS-Latin.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sr-RS.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sr-RS.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sv-SE.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sv-SE.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sv-SE.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sv-SE.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-sv-SE.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-sv-SE.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ta-IN.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ta-IN.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ta-IN.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ta-IN.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-ta-IN.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-ta-IN.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-th-TH.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-th-TH.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-th-TH.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-th-TH.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-th-TH.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-th-TH.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-tr-TR.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-tr-TR.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-tr-TR.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-tr-TR.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-tr-TR.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-tr-TR.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uk-UA.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uk-UA.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uk-UA.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uk-UA.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uk-UA.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uk-UA.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uz-UZ.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uz-UZ.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uz-UZ.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uz-UZ.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-uz-UZ.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-uz-UZ.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-vi-VN.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-vi-VN.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-vi-VN.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-vi-VN.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-vi-VN.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-vi-VN.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-CN.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-CN.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-CN.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-CN.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-CN.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-CN.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-TW.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-TW.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-TW.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-TW.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\lang\\summernote-zh-TW.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\lang\\summernote-zh-TW.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\plugin\\databasic\\summernote-ext-databasic.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\plugin\\databasic\\summernote-ext-databasic.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\plugin\\databasic\\summernote-ext-databasic.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\plugin\\databasic\\summernote-ext-databasic.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\plugin\\hello\\summernote-ext-hello.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\plugin\\hello\\summernote-ext-hello.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\plugin\\specialchars\\summernote-ext-specialchars.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\plugin\\specialchars\\summernote-ext-specialchars.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.css.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.css.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.min.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs4.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.css.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.css.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.min.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.min.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-bs5.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-bs5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.css.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.css.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.min.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.min.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote-lite.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote-lite.min.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.css.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.css.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.js"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.js.map",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.js.map"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.min.css",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.css"
+    },
+    {
+      "Id": "C:\\Users\\333220\\source\\repos\\Project1\\Project1\\wwwroot\\lib\\summernote\\summernote.min.js",
+      "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Project1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.Project1.props",
+      "PackagePath": "build\\Project1.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Project1.props",
+      "PackagePath": "buildMultiTargeting\\Project1.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.Project1.props",
+      "PackagePath": "buildTransitive\\Project1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
