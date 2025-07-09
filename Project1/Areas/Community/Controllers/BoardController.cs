@@ -48,6 +48,14 @@ namespace Project1.Areas.Community.Controllers
             BoardDTO result = await boardService.GetBoardContent(idx);
             return new ResponseDTO<BoardDTO> { Code = 200, Message = "OK", Data = result };
         }
+        
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> DeleteBoardContent([FromForm] String? CatCls, [FromForm] Int32 idx, [FromForm] String u_id)
+        {
+            Int32 result = await boardService.DeleteBoardContent(CatCls, idx, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
 
         [HttpGet]
         public async Task<ResponseDTO<List<CommentDTO>>> GetCommentList(String CatCls, Int32? BoardIdx)
@@ -60,6 +68,13 @@ namespace Project1.Areas.Community.Controllers
         public async Task<ResponseDTO<Int32>> SetParentComment([FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
         {
             Int32 result = await boardService.SetParentComment(BoardCatCls, BoardIdx, C_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> UpdateParentComment([FromForm] Int32? idx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
+        {
+            Int32 result = await boardService.UpdateParentComment(idx, BoardCatCls, BoardIdx, C_content, u_id);
             return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
         }
 
