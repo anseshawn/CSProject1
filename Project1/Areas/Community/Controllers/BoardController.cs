@@ -93,5 +93,19 @@ namespace Project1.Areas.Community.Controllers
             return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
         }
 
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> DeleteParentComment([FromForm] Int32? idx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? u_id)
+        {
+            Int32 result = await boardService.DeleteParentComment(idx, BoardCatCls, BoardIdx, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> SetChildComment([FromForm] Int32? parentIdx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
+        {
+            Int32 result = await boardService.SetChildComment(parentIdx, BoardCatCls, BoardIdx, C_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
     }
 }
