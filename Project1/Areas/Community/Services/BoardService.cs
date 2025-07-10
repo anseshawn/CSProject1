@@ -379,5 +379,104 @@ namespace Project1.Areas.Community.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<int> DeleteParentComment(int? idx, string? BoardCatCls, int? BoardIdx, string? u_id)
+        {
+            try
+            {
+                Int32 result = 0;
+                String str_sql = "";
+                str_sql += "\t" + " UPDATE " + "\r\n";
+                str_sql += "\t" + " TJ_Comment " + "\r\n";
+                str_sql += "\t" + " SET " + "\r\n";
+                str_sql += "\t" + " DelFlg = 'D' " + "\r\n";
+                str_sql += "\t" + " , ModifyDateTime = GETDATE() " + "\r\n";
+                str_sql += "\t" + " , ModifyUser = N'" + u_id + "' " + "\r\n";
+                str_sql += "\t" + " WHERE " + "\r\n";
+                str_sql += "\t" + " idx = " + idx + " " + "\r\n";
+                str_sql += "\t" + " AND " + "\r\n";
+                str_sql += "\t" + " BoardCatCls = '" + BoardCatCls + "' " + "\r\n";
+                str_sql += "\t" + " AND " + "\r\n";
+                str_sql += "\t" + " BoardIdx = " + BoardIdx + " " + "\r\n";
+                str_sql += "\t" + " ; " + "\r\n";
+                System.Diagnostics.Debug.WriteLine(str_sql);
+
+                using (SqlConnection sqlConnection = new SqlConnection(connStr))
+                {
+                    await sqlConnection.OpenAsync();
+                    using (SqlCommand sqlCommand = new SqlCommand(str_sql, sqlConnection))
+                    {
+                        result = await sqlCommand.ExecuteNonQueryAsync();
+                        await sqlCommand.DisposeAsync();
+                    }
+                    await sqlConnection.CloseAsync();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null) System.Diagnostics.Debug.WriteLine("InnerException : " + ex.InnerException.Message);
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<int> SetChildComment(int? ParentIdx, string? BoardCatCls, int? BoardIdx, string? C_content, string? u_id)
+        {
+            try
+            {
+                Int32 result = 0;
+                String str_sql = "";
+                str_sql += "\t" + " DECLARE @parent_order INT " + "\r\n";
+                str_sql += "\t" + " SET @parent_order = (SELECT C_order FROM TJ_Comment WHERE idx = "+ ParentIdx + "); " + "\r\n";
+                str_sql += "\t" + " UPDATE TJ_Comment SET C_order = C_order + 1 WHERE BoardCatCls = '"+ BoardCatCls + "' AND BoardIdx = "+ BoardIdx + " AND C_order > @parent_order; " + "\r\n";
+
+                str_sql += "\t" + " INSERT INTO " + "\r\n";
+                str_sql += "\t" + " TJ_Comment " + "\r\n";
+                str_sql += "\t" + " ( " + "\r\n";
+                str_sql += "\t" + " BoardCatCls " + "\r\n";
+                str_sql += "\t" + " , BoardIdx " + "\r\n";
+                str_sql += "\t" + " , C_order " + "\r\n";
+                str_sql += "\t" + " , C_depth " + "\r\n";
+                str_sql += "\t" + " , C_content " + "\r\n";
+                str_sql += "\t" + " , C_author " + "\r\n";
+                str_sql += "\t" + " , EnterDateTime " + "\r\n";
+                str_sql += "\t" + " , EnterUser " + "\r\n";
+                str_sql += "\t" + " ) " + "\r\n";
+                str_sql += "\t" + " VALUES " + "\r\n";
+                str_sql += "\t" + " ( " + "\r\n";
+                str_sql += "\t" + " N'" + BoardCatCls + "' " + "\r\n";
+                str_sql += "\t" + " , " + BoardIdx + " " + "\r\n";
+                str_sql += "\t" + " , @parent_order + 1 " + "\r\n";
+                str_sql += "\t" + " , 2 " + "\r\n";
+                str_sql += "\t" + " , N'" + C_content + "' " + "\r\n";
+                str_sql += "\t" + " , (SELECT u_name FROM TM_Member WHERE u_id = N'" + u_id + "') " + "\r\n";
+                str_sql += "\t" + " , GETDATE() " + "\r\n";
+                str_sql += "\t" + " , N'" + u_id + "' " + "\r\n";
+                str_sql += "\t" + " ) " + "\r\n";
+                str_sql += "\t" + " ; " + "\r\n";
+                System.Diagnostics.Debug.WriteLine(str_sql);
+
+                using (SqlConnection sqlConnection = new SqlConnection(connStr))
+                {
+                    await sqlConnection.OpenAsync();
+                    using (SqlCommand sqlCommand = new SqlCommand(str_sql, sqlConnection))
+                    {
+                        result = await sqlCommand.ExecuteNonQueryAsync();
+                        await sqlCommand.DisposeAsync();
+                    }
+                    await sqlConnection.CloseAsync();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null) System.Diagnostics.Debug.WriteLine("InnerException : " + ex.InnerException.Message);
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
