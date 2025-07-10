@@ -35,7 +35,16 @@ namespace Project1.Areas.Community.Controllers
             return View();
         }
 
-        [HttpPost]
+		[HttpGet]
+		public ActionResult EditBoard(Int32 idx)
+		{
+			u_id = HttpContext.Session.GetString("key_u_id");
+			if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
+			ViewData["u_id"] = u_id;
+			return View();
+		}
+
+		[HttpPost]
         public async Task<ResponseDTO<Int32>> SetBoardContent([FromForm] String? CatCls, [FromForm] String? B_title, [FromForm] String? B_content, [FromForm] String? u_id)
         {
             Int32 result = await boardService.SetBoardContent(CatCls, B_title, B_content, u_id);
@@ -54,8 +63,14 @@ namespace Project1.Areas.Community.Controllers
         {
             Int32 result = await boardService.DeleteBoardContent(CatCls, idx, u_id);
             return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
-        }
+        }          
 
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> UpdateBoardContent([FromForm] String? CatCls, [FromForm] Int32 idx, [FromForm] String? B_title, [FromForm] String? B_content, [FromForm] String u_id)
+        {
+            Int32 result = await boardService.UpdateBoardContent(CatCls, idx, B_title, B_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }        
 
         [HttpGet]
         public async Task<ResponseDTO<List<CommentDTO>>> GetCommentList(String CatCls, Int32? BoardIdx)

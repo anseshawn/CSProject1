@@ -7,7 +7,7 @@
 @{
     <html>
     <head>
-        <title>내용</title>
+        <title>게시글 보기</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -218,7 +218,7 @@
             }
 
             function boardEdit() {
-
+                window.location.href = "/Community/Board/EditBoard?idx="+idx;
             }
 
             function boardDelete() {
@@ -317,7 +317,7 @@
                     setEditComment(listBlock, data.idx);
                 }
                 deleteCommentBtn.onclick = function () {
-                    deleteComment(listBlock);
+                    deleteComment(listBlock, data.idx);
                 }
 
                 // 작성자일 경우만 수정/삭제 버튼 보이기
@@ -370,6 +370,7 @@
                 });
             }
 
+            // 댓글에 답글 달기
             function addReply() {
 
             }
@@ -453,7 +454,7 @@
                         <!-- 제목 -->
                         <div class="row justify-content-center mt-3">
                             <div class="col text-center">
-                                <span id="B_title"></span>
+                                <h4 id="B_title"></h4>
                             </div>
                         </div>
 
