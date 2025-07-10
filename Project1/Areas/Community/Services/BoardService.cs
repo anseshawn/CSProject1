@@ -336,5 +336,48 @@ namespace Project1.Areas.Community.Services
                 }
             }
         }
+
+        public async Task<int> UpdateBoardContent(string? CatCls, int idx, string? B_title, string? B_content, string u_id)
+        {
+            try
+            {
+                Int32 result = 0;
+                String str_sql = "";
+                str_sql += "\t" + " UPDATE " + "\r\n";
+                str_sql += "\t" + " TJ_Board " + "\r\n";
+                str_sql += "\t" + " SET " + "\r\n";
+                str_sql += "\t" + " B_title = N'" + B_title + "' " + "\r\n";
+                str_sql += "\t" + " , B_content = N'" + B_content + "' " + "\r\n";
+                str_sql += "\t" + " , ModifyDateTime = GETDATE() " + "\r\n";
+                str_sql += "\t" + " , ModifyUser = N'"+ u_id + "' " + "\r\n";
+                str_sql += "\t" + " WHERE " + "\r\n";
+                str_sql += "\t" + " CatCls = '" + CatCls + "' " + "\r\n";
+                str_sql += "\t" + " AND " + "\r\n";
+                str_sql += "\t" + " idx = " + idx + " " + "\r\n";
+                str_sql += "\t" + " AND " + "\r\n";
+                str_sql += "\t" + " EnterUser = N'" + u_id + "' " + "\r\n";
+                str_sql += "\t" + " ; " + "\r\n";
+                System.Diagnostics.Debug.WriteLine(str_sql);
+
+                using (SqlConnection sqlConnection = new SqlConnection(connStr))
+                {
+                    await sqlConnection.OpenAsync();
+                    using (SqlCommand sqlCommand = new SqlCommand(str_sql, sqlConnection))
+                    {
+                        result = await sqlCommand.ExecuteNonQueryAsync();
+                        await sqlCommand.DisposeAsync();
+                    }
+                    await sqlConnection.CloseAsync();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null) System.Diagnostics.Debug.WriteLine("InnerException : " + ex.InnerException.Message);
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
