@@ -25,13 +25,18 @@ namespace Project1.Areas.Community.Controllers
         }
 
         [HttpGet]
-        public async Task<ResponseDTO<List<BoardDTO>>> BoardList(String CatCls, Int32? Pag, String? Section, String? SearchStr)
+        public async Task<ResponseDTO<BoardListDTO>> BoardList(String CatCls, Int32? Pag, String? Section, String? SearchStr)
         {
             Int32 TotRecCnt = await mainService.GetBoardListCount(CatCls, Section, SearchStr);
             Int32 PageSize = 10;
             PageDTO page = pageService.Pagination(Pag ?? 1, PageSize, TotRecCnt, CatCls, Section, SearchStr);
-            List<BoardDTO> result = await mainService.GetBoardList(CatCls, Pag ?? -1, PageSize, Section, SearchStr);
-            return new ResponseDTO<List<BoardDTO>> { Code = 200, Message = "OK", Data = result };
+            List<BoardDTO> board = await mainService.GetBoardList(CatCls, (Pag ?? 1)-1, PageSize, Section, SearchStr);
+            BoardListDTO result = new BoardListDTO
+            {
+                BoardList = board,
+                Page = page
+            };
+            return new ResponseDTO<BoardListDTO> { Code = 200, Message = "OK", Data = result };
         }
     }
 }

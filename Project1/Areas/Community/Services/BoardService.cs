@@ -118,9 +118,17 @@ namespace Project1.Areas.Community.Services
                 String str_sql = "";
                 str_sql += "\t" + " SELECT " + "\r\n";
                 str_sql += "\t" + " idx " + "\r\n";
+                str_sql += "\t" + " , ParentIdx " + "\r\n";
                 str_sql += "\t" + " , C_order " + "\r\n";
                 str_sql += "\t" + " , C_depth " + "\r\n";
-                str_sql += "\t" + " , C_content " + "\r\n";
+                str_sql += "\t" + " , CASE WHEN DelFlg = 'D' " + "\r\n";
+                str_sql += "\t" + " THEN " + "\r\n";
+                str_sql += "\t" + " CASE WHEN C_depth = 1 " + "\r\n";
+                str_sql += "\t" + " THEN N'삭제된 댓글입니다' " + "\r\n";
+                str_sql += "\t" + " ELSE N'삭제된 답글입니다' " + "\r\n";
+                str_sql += "\t" + " END " + "\r\n";
+                str_sql += "\t" + " ELSE C_content " + "\r\n";
+                str_sql += "\t" + " END AS C_content " + "\r\n";
                 str_sql += "\t" + " , C_author " + "\r\n";
                 str_sql += "\t" + " , EnterDateTime " + "\r\n";
                 str_sql += "\t" + " , EnterUser " + "\r\n";
@@ -134,7 +142,7 @@ namespace Project1.Areas.Community.Services
                 str_sql += "\t" + " DelFlg IS NULL " + "\r\n";
                 str_sql += "\t" + " AND " + "\r\n";
                 str_sql += "\t" + " C_report < 5 " + "\r\n";
-                str_sql += "\t" + " ORDER BY C_order, C_depth " + "\r\n";
+                str_sql += "\t" + " ORDER BY C_order, C_depth, idx " + "\r\n";
                 str_sql += "\t" + " ; " + "\r\n";
                 System.Diagnostics.Debug.WriteLine(str_sql);
 
@@ -150,6 +158,7 @@ namespace Project1.Areas.Community.Services
                             {
                                 CommentDTO comment = new();
                                 comment.idx = reader.GetInt32("idx");
+                                comment.ParentIdx = reader.IsDBNull("ParentIdx") ? null : reader.GetInt32("ParentIdx");
                                 comment.C_order = reader.IsDBNull("C_order") ? 0 : reader.GetInt32("C_order");
                                 comment.C_depth = reader.IsDBNull("C_depth") ? 0 : reader.GetInt32("C_depth");
                                 comment.C_content = reader.IsDBNull("C_content") ? String.Empty : reader.GetString("C_content");
@@ -391,7 +400,6 @@ namespace Project1.Areas.Community.Services
                 str_sql += "\t" + " SET " + "\r\n";
                 str_sql += "\t" + " DelFlg = 'D' " + "\r\n";
                 str_sql += "\t" + " , ModifyDateTime = GETDATE() " + "\r\n";
-                str_sql += "\t" + " , ModifyUser = N'" + u_id + "' " + "\r\n";
                 str_sql += "\t" + " WHERE " + "\r\n";
                 str_sql += "\t" + " idx = " + idx + " " + "\r\n";
                 str_sql += "\t" + " AND " + "\r\n";
@@ -428,15 +436,20 @@ namespace Project1.Areas.Community.Services
             {
                 Int32 result = 0;
                 String str_sql = "";
-                str_sql += "\t" + " DECLARE @parent_order INT " + "\r\n";
+                str_sql += "\t" + " DECLARE @parent_order INT; " + "\r\n";
                 str_sql += "\t" + " SET @parent_order = (SELECT C_order FROM TJ_Comment WHERE idx = "+ ParentIdx + "); " + "\r\n";
-                str_sql += "\t" + " UPDATE TJ_Comment SET C_order = C_order + 1 WHERE BoardCatCls = '"+ BoardCatCls + "' AND BoardIdx = "+ BoardIdx + " AND C_order > @parent_order; " + "\r\n";
+                str_sql += "\t" + " DECLARE @last_reply_order INT; " + "\r\n";
+                str_sql += "\t" + " SELECT @last_reply_order = MAX(C_order) FROM TJ_Comment WHERE parentIdx = "+ ParentIdx + "; " + "\r\n";
+                str_sql += "\t" + " IF @last_reply_order IS NULL SET @last_reply_order = @parent_order; " + "\r\n";
+
+                str_sql += "\t" + " UPDATE TJ_Comment SET C_order = C_order + 1 WHERE BoardCatCls = '"+ BoardCatCls + "' AND BoardIdx = "+ BoardIdx + " AND C_order > @last_reply_order; " + "\r\n";
 
                 str_sql += "\t" + " INSERT INTO " + "\r\n";
                 str_sql += "\t" + " TJ_Comment " + "\r\n";
                 str_sql += "\t" + " ( " + "\r\n";
                 str_sql += "\t" + " BoardCatCls " + "\r\n";
                 str_sql += "\t" + " , BoardIdx " + "\r\n";
+                str_sql += "\t" + " , ParentIdx " + "\r\n";
                 str_sql += "\t" + " , C_order " + "\r\n";
                 str_sql += "\t" + " , C_depth " + "\r\n";
                 str_sql += "\t" + " , C_content " + "\r\n";
@@ -448,7 +461,8 @@ namespace Project1.Areas.Community.Services
                 str_sql += "\t" + " ( " + "\r\n";
                 str_sql += "\t" + " N'" + BoardCatCls + "' " + "\r\n";
                 str_sql += "\t" + " , " + BoardIdx + " " + "\r\n";
-                str_sql += "\t" + " , @parent_order + 1 " + "\r\n";
+                str_sql += "\t" + " , " + ParentIdx + " " + "\r\n";
+                str_sql += "\t" + " , @last_reply_order + 1 " + "\r\n";
                 str_sql += "\t" + " , 2 " + "\r\n";
                 str_sql += "\t" + " , N'" + C_content + "' " + "\r\n";
                 str_sql += "\t" + " , (SELECT u_name FROM TM_Member WHERE u_id = N'" + u_id + "') " + "\r\n";

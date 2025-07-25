@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Project1.Areas.Blog.Controllers
+namespace Project1.Areas.Main.Controllers
 {
     public class DataController : Controller
     {

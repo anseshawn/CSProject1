@@ -264,29 +264,29 @@
                 fetch("/Community/Board/GetCommentList?CatCls=01&BoardIdx=" + idx, {
                     method: "GET"
                 })
-                    .then(response => response.json())
-                    .then(resultSet => {
-                        if (resultSet.code != 200) {
-                            console.log("GET CommentList: NG");
-                            return false;
+                .then(response => response.json())
+                .then(resultSet => {
+                    if (resultSet.code != 200) {
+                        console.log("GET CommentList: NG");
+                        return false;
+                    }
+                    if (resultSet.data.length == 0 || resultSet.message != "OK") {
+                        console.log("GET CommentList: No data");
+                    }
+                    else {
+                        for (let i = 0; i < resultSet.data.length; i++) {
+                            addCommentList(resultSet.data[i], i);
                         }
-                        if (resultSet.data.length == 0 || resultSet.message != "OK") {
-                            console.log("GET CommentList: No data");
-                        }
-                        else {
-                            for (let i = 0; i < resultSet.data.length; i++) {
-                                addCommentList(resultSet.data[i], i);
-                            }
-                        }
-                    })
-                    .catch((err) => {
-                        console.log("GET CommentList err : " , err);
-                        Swal.fire({
-                            icon: 'error',
-                            title: '서버 오류',
-                            text: '잠시 후 다시 시도해주세요.'
-                        });
+                    }
+                })
+                .catch((err) => {
+                    console.log("GET CommentList err : " , err);
+                    Swal.fire({
+                        icon: 'error',
+                        title: '서버 오류',
+                        text: '잠시 후 다시 시도해주세요.'
                     });
+                });
             }
 
             function addCommentList(data, index) {
@@ -300,8 +300,9 @@
                 listBlock.querySelector(".C_author").textContent = data.c_author;
                 listBlock.querySelector(".C_content").textContent = data.c_content;
                 listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
-
                 listBlock.querySelector(".edit_content").textContent = data.c_content;
+
+                listBlock.dataset.idx = data.idx;
 
                 let addReplyBtn = listBlock.querySelector(".addReplyBtn");
                 let editCommentBtn = listBlock.querySelector(".editCommentBtn");
@@ -329,7 +330,18 @@
                     clone.querySelector('.comment-actions').classList.remove('d-none');
                 }
 
-                commentBlock.appendChild(clone);
+                if(data.c_depth == 1 || !data.parentIdx) {
+                    commentBlock.appendChild(clone);
+                }
+                else {
+                    let parentComment = commentBlock.querySelector(`[data-idx="${data.parentIdx}"]`);
+                    if(parentComment) {
+                        parentComment.querySelector(".replies").appendChild(clone);
+                    }
+                    else {
+                        commentBlock.appendChild(clone);
+                    }
+                }
             }
 
             function inputComment() {

@@ -58,25 +58,25 @@
                 text-decoration: none;
             }
 
-            .board-list {
+            .board_list {
                 list-style: none;
                 padding: 0;
                 margin: 0;
                 width: 100%;
             }
 
-            .board-list li {
+            .board_list li {
                 display: flex;
                 border-bottom: 1px solid #ccc;
                 padding: 10px 0;
             }
 
-            .board-list li.header {
+            .board_list li.header {
                 font-weight: bold;
                 background-color: #f0f0f0;
             }
 
-            .board-list li div {
+            .board_list li div {
                 flex: 1;
                 padding: 0 10px;
             }
@@ -93,6 +93,27 @@
                 color: #fff;
                 background: #555;
             }
+
+            .board_list a:link {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .board_list a:visited {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .board_list a:hover {
+                color: #999;
+                text-decoration: none;
+            }
+
+            .board_list a:active {
+                color: #999;
+                text-decoration: none;
+            }
+
         </style>
         <script>
             'use strict';
@@ -101,7 +122,7 @@
 
             window.onload = function() {
                 eventbind();
-                loadBoardList();
+                loadBoardList(1);
             }
 
             function eventbind() {
@@ -158,27 +179,33 @@
                 });
             }
 
-            function loadBoardList() {
-                fetch("/Community/Main/BoardList?CatCls=01", {
+            function loadBoardList(page = 1) {
+                fetch(`/Community/Main/BoardList?CatCls=01&Pag=${page}`, {
                     method: "GET"
                 })
                 .then(response => response.json())
                 .then(resultSet => {
-                    if (resultSet.code != 200) {
+                    if (resultSet.code != 200 || resultSet.message != "OK") {
 						console.log("GET BoardList: NG");
 						return false;
 					}
-					if (resultSet.data.length == 0 || resultSet.message != "OK") {
+					if (resultSet.data.boardList.length == 0) {
 						console.log("GET BoardList: No data");
 					}
                     else {
                         console.log(resultSet.data);
-                        for(let i = 0; i < resultSet.data.length; i++) {
-                            addBoardList(resultSet.data[i], i);
+                        let boardList = resultSet.data.boardList;
+                        let pageInfo = resultSet.data.page;
+                        let board = document.querySelector(".board_items");
+                        board.innerHTML = ""; // 기존 리스트 초기화
+                        for(let i = 0; i < boardList.length; i++) {
+                            addBoardList(boardList[i], i);
                         }
+                        renderPagination(pageInfo);
                     }
                 })
-                .catch(() => {
+                .catch((err) => {
+                    console.log(err);
                     Swal.fire({
                         icon: 'error',
                         title: '서버 오류',
@@ -190,10 +217,10 @@
             function addBoardList(data, index) {
                 console.log(data);
                 let main = document.querySelector(".contentMain");
-				let board = main.querySelector(".board-list");
+                let board = main.querySelector(".board_items");
                 let template = document.querySelector("template.BoardList");
 				let clone = document.importNode(template.content, true);
-                let listBlock = clone.querySelector(".board-list");
+                let listBlock = clone.querySelector(".board_list");
 
                 listBlock.querySelector(".idx").textContent = data.idx;
                 listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Board/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
@@ -202,6 +229,52 @@
 
                 board.appendChild(clone);
             }
+
+            function renderPagination(pageInfo) {
+                let pagination = document.getElementById("pagination");
+                pagination.innerHTML = "";
+
+                let currentPage = pageInfo.pag;
+                let totalPages = pageInfo.totPage;
+                let blockSize = pageInfo.blockSize;
+                let curBlock = pageInfo.curBlock;
+
+                let startPage = curBlock * blockSize + 1;
+                let endPage = Math.min(startPage + blockSize - 1, totalPages);
+
+                let createLink = (label, page, disabled = false, active = false) => {
+                    let li = document.createElement("li");
+                    li.className = `page-item ${disabled ? "disabled" : ""} ${active ? "active" : ""}`;
+
+                    let a = document.createElement("a");
+                    a.className = "page-link";
+                    a.href = "#";
+                    a.textContent = label;
+                    a.onclick = function (e) {
+                        e.preventDefault();
+                        if (!disabled) {
+                            loadBoardList(page);
+                        }
+                    };
+
+                    li.appendChild(a);
+                    return li;
+                };
+
+                pagination.appendChild(createLink("처음", 1, currentPage === 1));
+                pagination.appendChild(createLink("이전", Math.max(1, startPage - 1), curBlock === 0));
+                //pagination.appendChild(createLink("이전", Math.max(1, currentPage - 1), currentPage === 1));
+
+
+                for (let i = startPage; i <= endPage; i++) {
+                    pagination.appendChild(createLink(i, i, false, i === currentPage));
+                }
+
+                pagination.appendChild(createLink("다음", Math.min(totalPages, endPage + 1), curBlock === pageInfo.lastBlock));
+                //pagination.appendChild(createLink("다음", Math.min(totalPages, currentPage + 1), currentPage === totalPages));
+                pagination.appendChild(createLink("끝", totalPages, currentPage === totalPages));
+            }
+
         </script>
     </head>
     <body>
@@ -236,36 +309,30 @@
                 <div class="row justify-content-center align-items-center mt-2 mb-2">
                     <div class="col">
                         <div class="text-center w-100" >
-                            <ul class="board-list">
+                            <ul class="board_list">
                                 <li class="header">
                                     <div>번호</div>
                                     <div>제목</div>
                                     <div>작성자</div>
                                     <div>작성일</div>
                                 </li>
+                                <div class="board_items"></div>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">2</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+
+                <div class="pagination-container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center" id="pagination">
+                            <!-- 페이지 버튼이 여기에 동적으로 추가됨 -->
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
         <template class="BoardList" id="">
-            <ul class="board-list">
+            <ul class="board_list">
                 <li>
                     <div class="idx"></div>
                     <div class="B_title"></div>
