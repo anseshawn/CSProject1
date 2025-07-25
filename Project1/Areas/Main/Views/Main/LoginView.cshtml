@@ -71,6 +71,18 @@
                 document.getElementById("memberLoginBtn").onclick = function () {
                     memberLogin();
                 }
+                document.getElementById("u_id").onkeyup = function (e) {
+                    clickLoginBtn(e);
+                }
+                document.getElementById("u_pwd").onkeyup = function (e) {
+                    clickLoginBtn(e);
+                }
+            }
+
+            function clickLoginBtn(e) {
+                if(e.keyCode == 13) {
+                    document.getElementById("memberLoginBtn").click();
+                }
             }
 
             function savedIdCheck() {

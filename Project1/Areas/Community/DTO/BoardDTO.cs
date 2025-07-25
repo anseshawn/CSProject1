@@ -12,4 +12,10 @@ namespace Project1.Areas.Community.DTO
         public DateTimeOffset? EnterDateTime { get; set; }
         public String? EnterUser { get; set; }
     }
+
+    public class BoardListDTO
+    {
+        public List<BoardDTO>? BoardList { get; set; }
+        public PageDTO? Page { get; set; }
+    }
 }

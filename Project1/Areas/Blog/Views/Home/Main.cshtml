@@ -7,7 +7,7 @@
 @{
     <html>
     <head>
-        <title>글쓰기 - 커뮤니티</title>
+        <title>블로그</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -19,9 +19,6 @@
         <!-- 커스텀알럿 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <!-- summernote -->
-        <script src="~/lib/summernote/summernote-bs5.js"></script>
-        <link href="~/lib/summernote/summernote-bs5.css" rel="stylesheet" />
         <style>
             body, html {
                 height: 100%;
@@ -61,29 +58,6 @@
                 text-decoration: none;
             }
 
-            .board-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-            }
-
-            .board-list li {
-                display: flex;
-                border-bottom: 1px solid #ccc;
-                padding: 10px 0;
-            }
-
-            .board-list li.header {
-                font-weight: bold;
-                background-color: #f0f0f0;
-            }
-
-            .board-list li div {
-                flex: 1;
-                padding: 0 10px;
-            }
-
             .funcBtn_A {
                 padding: 0.5rem 1rem;
                 color: #fff;
@@ -96,14 +70,32 @@
                 color: #fff;
                 background: #555;
             }
+
+            #post-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card {
+                border: 1px solid #ccc;
+                padding: 20px;
+                border-radius: 10px;
+                background: #f9f9f9;
+            }
+
         </style>
         <script>
             'use strict';
 
             let u_id = '@u_id';
+            let skip = 0;
+            let loading = false;
+            const take = 10;
 
             window.onload = function() {
                 eventbind();
+                loadPosts();
             }
 
             function eventbind() {
@@ -115,17 +107,9 @@
                     document.querySelector(".loginMenu").style.display = "none";
                     document.querySelector(".logoutMenu").style.display = "flex";
                 }
-                $('#B_content').summernote({
-                    height: 300,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: true                  // set focus to editable area after initializing summernote
-                });
+
                 document.getElementById("writeBtn").onclick = function() {
-                    writeBoard();
-                }
-                document.getElementById("cancelBtn").onclick = function () {
-                    location.href = "/Community/Main/Index";
+                    window.location.href = "/Blog/Home/WritePost";
                 }
             }
 
@@ -168,58 +152,26 @@
                 });
             }
 
-            function writeBoard() {
-                let B_title = document.getElementById("B_title").value.trim();
-                if(B_title == "") {
-                    alert("제목을 입력하세요.");
-                    return false;
-                }
-                let B_content = document.getElementById("B_content").value.trim();
-                if (B_content == "") {
-                    alert("내용을 입력하세요.");
-                    return false;
-                }
+            async function loadPosts() {
+                if (loading) return;
+                loading = true;
+                document.getElementById("loading").style.display = "block";
 
-                $.ajax({
-                    url: "/Community/Board/SetBoardContent",
-                    type: "POST",
-                    data: {
-                        CatCls: "01",
-                        B_title: B_title,
-                        B_content: B_content,
-                        u_id: u_id
-                    },
-                    beforeSend: function () {
-                        $("#loading").addClass("overlaySpinner");
-                    },
-                    success: function (response) {
-                        $("#loading").removeClass("overlaySpinner");
-                        if (response.data == 0 || response.message != "OK") {
-                            Swal.fire({
-                                icon: 'error',
-                                text: "등록에 실패했습니다. 잠시 후 다시 시도해주세요."
-                            });
-                        }
-                        else {
-                            Swal.fire({
-                                icon: 'success',
-                                text: "게시글을 등록했습니다.",
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                confirmButtonText: "확인"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = "/Community/Main/Index";
-                                }
-                            });
-                        }
-                    },
-                    error: function (request, status, error) {
-                        console.log(request.responseText, status, error);
-                    }
+                let response = await fetch(`/Blog/Data/GetBlogList?skip=${skip}&take=${take}`);
+                let posts = await response.json();
+
+                let container = document.getElementById("post-container");
+                posts.forEach(post => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+                    container.appendChild(card);
                 });
-            }
 
+                skip += take;
+                loading = false;
+                document.getElementById("loading").style.display = "none";
+            }
         </script>
     </head>
     <body>
@@ -245,39 +197,29 @@
             </div>
         </nav>
         <div class="container flex-column center-container">
-            <div id="loading"></div>
             <div class="contentMain">
-                <div class="row justify-content-end">
-                    <div class="col-auto">
-                        <h4>글 쓰 기</h4>
+                <div class="row justify-content-end mt-2 mb-2">
+                    <div class="col text-end">
+                        <button type="button" id="writeBtn" class="btn funcBtn_A">글쓰기</button>
                     </div>
                 </div>
                 <div class="row justify-content-center align-items-center mt-2 mb-2">
                     <div class="col">
-                        <table class="table table-borderless">
-                            <tr>
-                                <td style="width:20%;"><input type="text" value="Community" class="form-control" disabled /></td>
-                                <td style="width:80%;">
-                                    <input type="text" name="B_title" id="B_title" class="form-control" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <textarea name="B_content" id="B_content" value=""></textarea>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <hr />
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-auto">
-                        <button type="button" id="writeBtn" class="btn funcBtn_A">등록하기</button>
-                        <button type="button" id="cancelBtn" class="btn funcBtn_A">취소</button>
+                        <div id="post_container" ></div>
+                        <div id="loading">loading...</div>
                     </div>
                 </div>
             </div>
         </div>
+        <template class="BlogList" id="">
+            <ul class="blog_list">
+                <li>
+                    <div class="B_title"></div>
+                    <div class="EnterDate"></div>
+                    <div class="B_Content"></div>
+                </li>
+            </ul>
+        </template>
     </body>
     </html>
 }
