@@ -82,6 +82,7 @@
                 padding: 20px;
                 border-radius: 10px;
                 background: #f9f9f9;
+                width: 25rem;
             }
 
         </style>
@@ -157,20 +158,40 @@
                 loading = true;
                 document.getElementById("loading").style.display = "block";
 
-                let response = await fetch(`/Blog/Data/GetBlogList?skip=${skip}&take=${take}`);
-                let posts = await response.json();
+                fetch(`/Blog/Data/GetBlogList?CatCls=02&skip=${skip}&take=${take}`, {
+                    method: "GET"
+                })
+                .then(response => response.json())
+                .then(resultSet => {
+                     if (resultSet.code != 200 || resultSet.message != "OK") {
+						console.log("GET loadPosts: NG");
+						return false;
+					}
+					if (resultSet.data.length == 0) {
+						console.log("GET loadPosts: No data");
+					}
+                    else {
+                        let container = document.getElementById("post_container");
+                        resultSet.data.forEach(post => {
+                            let card = document.createElement("div");
+                            card.className = "card";
+                            card.innerHTML = `<h4>${post.b_title}</h4><p>${post.b_content}</p>`;
+                            container.appendChild(card);
+                        });
 
-                let container = document.getElementById("post-container");
-                posts.forEach(post => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-                    container.appendChild(card);
+                        skip += take;
+                        loading = false;
+                        document.getElementById("loading").style.display = "none";
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    Swal.fire({
+                        icon: 'error',
+                        title: '서버 오류',
+                        text: '잠시 후 다시 시도해주세요.'
+                    });
                 });
-
-                skip += take;
-                loading = false;
-                document.getElementById("loading").style.display = "none";
             }
         </script>
     </head>
@@ -205,7 +226,7 @@
                 </div>
                 <div class="row justify-content-center align-items-center mt-2 mb-2">
                     <div class="col">
-                        <div id="post_container" ></div>
+                        <div id="post_container"></div>
                         <div id="loading">loading...</div>
                     </div>
                 </div>
@@ -216,7 +237,7 @@
                 <li>
                     <div class="B_title"></div>
                     <div class="EnterDate"></div>
-                    <div class="B_Content"></div>
+                    <div class="B_content"></div>
                 </li>
             </ul>
         </template>
