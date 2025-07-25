@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Project1.Areas.Community.DTO;
 using Project1.Areas.Community.Services;
-using Project1.Areas.Main.Services;
-using Project1.Areas.Page.DTO;
-using Project1.Areas.Page.Service;
 using Project1.DTO;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Project1.Areas.Community.Controllers
 {
@@ -16,33 +11,6 @@ namespace Project1.Areas.Community.Controllers
     {
         String? u_id = String.Empty;
         private readonly BoardService boardService = new();
-
-        [HttpGet]
-        public ActionResult WriteBoard()
-        {
-            u_id = HttpContext.Session.GetString("key_u_id");
-            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
-            ViewData["u_id"] = u_id;
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult BoardContent([FromQuery] Int32 idx)
-        {
-            u_id = HttpContext.Session.GetString("key_u_id");
-            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
-            ViewData["u_id"] = u_id;
-            return View();
-        }
-
-		[HttpGet]
-		public ActionResult EditBoard(Int32 idx)
-		{
-			u_id = HttpContext.Session.GetString("key_u_id");
-			if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
-			ViewData["u_id"] = u_id;
-			return View();
-		}
 
 		[HttpPost]
         public async Task<ResponseDTO<Int32>> SetBoardContent([FromForm] String? CatCls, [FromForm] String? B_title, [FromForm] String? B_content, [FromForm] String? u_id)

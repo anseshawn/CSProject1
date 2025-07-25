@@ -24,6 +24,34 @@ namespace Project1.Areas.Community.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public ActionResult WriteBoard()
+        {
+            u_id = HttpContext.Session.GetString("key_u_id");
+            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
+            ViewData["u_id"] = u_id;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult BoardContent([FromQuery] Int32 idx)
+        {
+            u_id = HttpContext.Session.GetString("key_u_id");
+            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
+            ViewData["u_id"] = u_id;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditBoard(Int32 idx)
+        {
+            u_id = HttpContext.Session.GetString("key_u_id");
+            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
+            ViewData["u_id"] = u_id;
+            return View();
+        }
+
         [HttpGet]
         public async Task<ResponseDTO<BoardListDTO>> BoardList(String CatCls, Int32? Pag, String? Section, String? SearchStr)
         {

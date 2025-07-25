@@ -136,7 +136,7 @@
                 }
 
                 document.getElementById("writeBtn").onclick = function() {
-                    window.location.href = "/Community/Board/WriteBoard";
+                    window.location.href = "/Community/Main/WriteBoard";
                 }
             }
 
@@ -223,7 +223,7 @@
                 let listBlock = clone.querySelector(".board_list");
 
                 listBlock.querySelector(".idx").textContent = data.idx;
-                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Board/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
+                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Main/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
                 listBlock.querySelector(".B_Author").textContent = data.b_author;
                 listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
 

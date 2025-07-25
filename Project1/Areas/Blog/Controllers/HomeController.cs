@@ -10,6 +10,9 @@ namespace Project1.Areas.Blog.Controllers
 
         public ActionResult Main()
         {
+            u_id = HttpContext.Session.GetString("key_u_id");
+            if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
+            ViewData["u_id"] = u_id;
             return View();
         }
     }
