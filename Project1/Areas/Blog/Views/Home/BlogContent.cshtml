@@ -1,0 +1,642 @@
+﻿@*
+   메인
+*@
+@{
+    String u_id = ViewData["u_id"] as String ?? String.Empty;
+}
+@{
+    <html>
+    <head>
+        <title>내용 보기</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/30451a74a8.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- 커스텀알럿 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- summernote -->
+        <script src="~/lib/summernote/summernote-bs5.js"></script>
+        <link href="~/lib/summernote/summernote-bs5.css" rel="stylesheet" />
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            body, .navbar {
+                font-family: 'MS PGothic';
+                background-color: #aaa;
+            }
+
+            .center-container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contentMain {
+                border: 1px solid #DDD;
+                padding: 10rem 7rem;
+            }
+
+            .navbar a:link {
+                color: #DDD;
+                text-decoration: none;
+            }
+
+            .navbar a:visited {
+                color: #DDD;
+                text-decoration: none;
+            }
+
+            .navbar a:hover {
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            .navbar a:active {
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            .board-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .board-list li {
+                display: flex;
+                border-bottom: 1px solid #ccc;
+                padding: 10px 0;
+            }
+
+            .board-list li.header {
+                font-weight: bold;
+                background-color: #f0f0f0;
+            }
+
+            .board-list li div {
+                flex: 1;
+                padding: 0 10px;
+            }
+
+            .funcBtn_A {
+                padding: 0.5rem 1rem;
+                color: #fff;
+                background: #888;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+            }
+            .funcBtn_A:hover {
+                color: #fff;
+                background: #555;
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+        <script>
+            'use strict';
+            let new_curr_url = new URL(document.URL);
+            let idx = new_curr_url.searchParams.get("idx")
+            let u_id = '@u_id';
+
+            window.onload = function() {
+                getBoardContent();
+                loadCommentList();
+                eventbind();
+            }
+
+            function eventbind() {
+                if(u_id == "") {
+                    document.querySelector(".loginMenu").style.display = "flex";
+                    document.querySelector(".logoutMenu").style.display = "none";
+                }
+                else {
+                    document.querySelector(".loginMenu").style.display = "none";
+                    document.querySelector(".logoutMenu").style.display = "flex";
+                }
+
+                document.getElementById("boardEditBtn").onclick = function () {
+                    boardEdit();
+                }
+
+                document.getElementById("boardDeleteBtn").onclick = function () {
+                    boardDelete();
+                }
+
+                document.getElementById("inputCommentBtn").onclick = function() {
+                    inputComment();
+                }
+            }
+
+            function memberLogout() {
+                $.ajax({
+                    url: "/Main/MemberLogout",
+                    type: "POST",
+                    data: {
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                //title: '성공',
+                                text: response.message,
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = response.redirectUrl;
+                                }
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: '실패',
+                                text: response.message
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: '서버 오류',
+                            text: '잠시 후 다시 시도해주세요.'
+                        });
+                    }
+                });
+            }
+
+            function getBoardContent() {
+                if(idx == "") {
+                    return false;
+                }
+
+                $.ajax({
+                    url: "/Blog/Data/GetBoardContent",
+                    type: "GET",
+                    data: {
+                        idx: idx
+                    },
+                    success: function (response) {
+                        if (response.data.length == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "게시물 로딩에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            let data = response.data;
+                            processData(data);
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
+            function processData(data) {
+                document.getElementById("B_title").innerHTML = `${data.b_title}`;
+                document.getElementById("B_content").innerHTML = `${data.b_content}`;
+                document.getElementById("B_author").innerHTML = `${data.b_author}`;
+                document.getElementById("EnterDate").innerHTML = `${data.enterDateTime.split("T")[0]}`;
+                if(data.enterUser == u_id) {
+                    document.querySelector(".editTable").style.display = "flex";
+                }
+                else {
+                    document.querySelector(".editTable").style.display = "none";
+                }
+            }
+
+            function boardEdit() {
+                window.location.href = "/Blog/Main/EditBoard?idx=" + idx;
+            }
+
+            function boardDelete() {
+                let ans = confirm("게시물을 삭제하시겠습니까?");
+                if(!ans) return false;
+
+                $.ajax({
+                    url: "/Blog/Data/DeleteBoardContent",
+                    type: "POST",
+                    data: {
+                        CatCls: "01",
+                        idx: idx,
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "삭제에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "삭제를 완료했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.href = "/Community/Main/Index";
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
+            function loadCommentList() {
+                fetch("/Blog/Data/GetCommentList?CatCls=01&BoardIdx=" + idx, {
+                    method: "GET"
+                })
+                .then(response => response.json())
+                .then(resultSet => {
+                    if (resultSet.code != 200) {
+                        console.log("GET CommentList: NG");
+                        return false;
+                    }
+                    if (resultSet.data.length == 0 || resultSet.message != "OK") {
+                        console.log("GET CommentList: No data");
+                    }
+                    else {
+                        for (let i = 0; i < resultSet.data.length; i++) {
+                            addCommentList(resultSet.data[i], i);
+                        }
+                    }
+                })
+                .catch((err) => {
+                    console.log("GET CommentList err : " , err);
+                    Swal.fire({
+                        icon: 'error',
+                        title: '서버 오류',
+                        text: '잠시 후 다시 시도해주세요.'
+                    });
+                });
+            }
+
+            function addCommentList(data, index) {
+                console.log(data);
+                let main = document.querySelector(".contentMain");
+                let commentBlock = main.querySelector(".commentBlock");
+                let template = document.querySelector("template.comment");
+                let clone = document.importNode(template.content, true);
+                let listBlock = clone.querySelector(".comment_list");
+
+                listBlock.querySelector(".C_author").textContent = data.c_author;
+                listBlock.querySelector(".C_content").textContent = data.c_content;
+                listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
+                listBlock.querySelector(".edit_content").textContent = data.c_content;
+
+                listBlock.dataset.idx = data.idx;
+
+                let addReplyBtn = listBlock.querySelector(".addReplyBtn");
+                let editCommentBtn = listBlock.querySelector(".editCommentBtn");
+                let setEditCommentBtn = listBlock.querySelector(".setEditCommentBtn");
+                let deleteCommentBtn = listBlock.querySelector(".deleteCommentBtn");
+                let replySubmitBtn = listBlock.querySelector(".replySubmitBtn");
+                addReplyBtn.onclick = function() {
+                    listBlock.querySelector(".replyMenu").classList.toggle("hidden");
+                }
+                replySubmitBtn.onclick = function () {
+                    replySubmit(listBlock, data.idx);
+                }
+                editCommentBtn.onclick = function () {
+                    listBlock.querySelector(".editComment").classList.toggle("hidden");
+                }
+                setEditCommentBtn.onclick = function () {
+                    setEditComment(listBlock, data.idx);
+                }
+                deleteCommentBtn.onclick = function () {
+                    deleteComment(listBlock, data.idx);
+                }
+
+                // 작성자일 경우만 수정/삭제 버튼 보이기
+                if (data.enterUser === u_id) {
+                    clone.querySelector('.comment-actions').classList.remove('d-none');
+                }
+
+                if(data.c_depth == 1 || !data.parentIdx) {
+                    commentBlock.appendChild(clone);
+                }
+                else {
+                    let parentComment = commentBlock.querySelector(`[data-idx="${data.parentIdx}"]`);
+                    if(parentComment) {
+                        parentComment.querySelector(".replies").appendChild(clone);
+                    }
+                    else {
+                        commentBlock.appendChild(clone);
+                    }
+                }
+            }
+
+            function inputComment() {
+                let C_content = document.getElementById("inputContent").value.trim();
+                if(C_content == "") {
+                    alert("내용을 입력하세요.");
+                    return false;
+                }
+                $.ajax({
+                    url: "/Blog/Data/SetParentComment",
+                    type: "POST",
+                    data: {
+                        BoardCatCls: "01",
+                        BoardIdx: idx,
+                        C_content: C_content,
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "등록에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "댓글을 등록했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
+            // 댓글에 답글 달기
+            function replySubmit(commentBlock, commentIdx) {
+                let replyContent = commentBlock.querySelector(".replyContent").value;
+
+                if (replyContent == "") {
+                    alert("내용을 입력하세요.");
+                    return false;
+                }
+
+                $.ajax({
+                    url: "/Blog/Data/SetChildComment",
+                    type: "POST",
+                    data: {
+                        parentIdx: commentIdx,
+                        BoardCatCls: "01",
+                        BoardIdx: idx,
+                        C_content: replyContent,
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "답글 등록에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "답글을 등록했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
+            function setEditComment(commentBlock, commentIdx) {
+                let C_content = commentBlock.querySelector(".edit_content").value;
+
+                if(C_content == "") {
+                    alert("내용을 입력하세요.");
+                    return false;
+                }
+                $.ajax({
+                    url: "/Blog/Data/UpdateParentComment",
+                    type: "POST",
+                    data: {
+                        idx: commentIdx,
+                        BoardCatCls: "01",
+                        BoardIdx: idx,
+                        C_content: C_content,
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "수정에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "댓글을 수정했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
+            function deleteComment(commentBlock, commentIdx) {
+                let ans = confirm("댓글을 삭제하겠습니까?");
+                if (!ans) return false;
+
+                $.ajax({
+                    url: "/Blog/Data/DeleteParentComment",
+                    type: "POST",
+                    data: {
+                        idx: commentIdx,
+                        BoardCatCls: "01",
+                        BoardIdx: idx,
+                        u_id: u_id
+                    },
+                    success: function (response) {
+                        if (response.data == 0 || response.message != "OK") {
+                            Swal.fire({
+                                icon: 'error',
+                                text: "삭제에 실패했습니다. 잠시 후 다시 시도해주세요."
+                            });
+                        }
+                        else {
+                            Swal.fire({
+                                icon: 'success',
+                                text: "삭제했습니다.",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                confirmButtonText: "확인"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <!-- 네비게이션 바 -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/Main/Index">Your Marker</a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav loginMenu mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Main/LoginView">로그인</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Main/JoinView">회원가입</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav logoutMenu mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link btn" onclick="memberLogout()">로그아웃</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container flex-column center-container">
+            <div class="contentMain" style="background-color: #fff;">
+                <div class="row justify-content-center align-items-center mt-2 mb-2">
+                    <div class="col">
+
+                        <!-- 제목 -->
+                        <div class="row justify-content-center mt-3">
+                            <div class="col text-center">
+                                <h4 id="B_title"></h4>
+                            </div>
+                        </div>
+
+                        <!-- 작성자 및 작성일 -->
+                        <div class="row justify-content-center mb-2">
+                            <div class="col-auto text-muted">
+                                작성자: <span id="B_author"></span> | 작성일: <span id="EnterDate"></span>
+                            </div>
+                        </div>
+                        <!-- 수정/삭제 버튼 -->
+                        <div class="row editTable justify-content-end mb-2">
+                            <div class="col-auto">
+                                <button class="btn btn-outline-secondary btn-sm me-1" id="boardEditBtn">수정</button>
+                                <button class="btn btn-outline-danger btn-sm" id="boardDeleteBtn">삭제</button>
+                            </div>
+                        </div>
+                        <hr/>
+                        <!-- 본문 내용 -->
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10">
+                                <div class="post-content">
+                                    <span id="B_content"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+
+                <!-- 댓글 영역 -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12 col-md-10">
+                        <h5>댓글</h5>
+                        <!-- 댓글 리스트 -->
+                        <div class="commentBlock mb-3"></div>
+                        <!-- 댓글 입력창 -->
+                        <div class="mb-3">
+                            <textarea id="inputContent" class="form-control" rows="3" placeholder="댓글을 입력하세요"></textarea>
+                            <div class="text-end mt-2">
+                                <button id="inputCommentBtn" class="btn btn-primary btn-sm">댓글 등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-auto">
+                        <a href="/Community/Main/Index" class="btn funcBtn_A">목록으로</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template class="comment">
+            <div class="comment_list border rounded p-2 mb-2">
+                <strong><span class="C_author"></span></strong> <span class="EnterDate text-muted small"></span>
+                <p class="C_content mb-1"></p>
+                <div class="d-flex justify-content-end gap-2">
+                    <button class="btn btn-sm btn-outline-secondary me-1 addReplyBtn">답글</button>
+                    <span class="comment-actions text-end d-none">
+                        <!-- 수정/삭제 버튼 (작성자일 경우만 보임) -->
+                        <button class="btn btn-sm btn-outline-secondary me-1 editCommentBtn">수정</button>
+                        <button class="btn btn-sm btn-outline-danger deleteCommentBtn">삭제</button>
+                    </span>
+                </div>
+                <div class="editComment hidden mt-2 mb-2">
+                    <textarea class="form-control edit_content" rows="3"></textarea>
+                    <div class="text-end mt-2">
+                        <button class="btn btn-primary btn-sm setEditCommentBtn">댓글 수정</button>
+                    </div>
+                </div>
+
+                <!-- 대댓글 입력창 -->
+                <div class="replyMenu hidden mt-2">
+                    <textarea class="form-control mb-1 replyContent" rows="2" placeholder="대댓글을 입력하세요"></textarea>
+                    <div class="text-end">
+                        <button class="btn btn-sm btn-outline-primary replySubmitBtn">등록</button>
+                    </div>
+                </div>
+
+                <!-- 대댓글 리스트 -->
+                <div class="replies mt-2 ms-3"></div>
+            </div>
+        </template>
+    </body>
+    </html>
+}
