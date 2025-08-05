@@ -181,7 +181,7 @@
                 }
 
                 $.ajax({
-                    url: "/Community/Board/GetBoardContent",
+                    url: "/Community/Data/GetBoardContent",
                     type: "GET",
                     data: {
                         idx: idx
@@ -218,7 +218,7 @@
             }
 
             function boardEdit() {
-                window.location.href = "/Community/Main/EditBoard?idx="+idx;
+                window.location.href = "/Community/Home/EditBoard?idx=" + idx;
             }
 
             function boardDelete() {
@@ -226,7 +226,7 @@
                 if(!ans) return false;
 
                 $.ajax({
-                    url: "/Community/Board/DeleteBoardContent",
+                    url: "/Community/Data/DeleteBoardContent",
                     type: "POST",
                     data: {
                         CatCls: "01",
@@ -249,7 +249,7 @@
                                 confirmButtonText: "확인"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    location.href = "/Community/Main/Index";
+                                    location.href = "/Community/Home/Main";
                                 }
                             });
                         }
@@ -261,7 +261,7 @@
             }
 
             function loadCommentList() {
-                fetch("/Community/Board/GetCommentList?CatCls=01&BoardIdx=" + idx, {
+                fetch("/Community/Data/GetCommentList?CatCls=01&BoardIdx=" + idx, {
                     method: "GET"
                 })
                 .then(response => response.json())
@@ -351,7 +351,7 @@
                     return false;
                 }
                 $.ajax({
-                    url: "/Community/Board/SetParentComment",
+                    url: "/Community/Data/SetParentComment",
                     type: "POST",
                     data: {
                         BoardCatCls: "01",
@@ -396,7 +396,7 @@
                 }
 
                 $.ajax({
-                    url: "/Community/Board/SetChildComment",
+                    url: "/Community/Data/SetChildComment",
                     type: "POST",
                     data: {
                         parentIdx: commentIdx,
@@ -440,7 +440,7 @@
                     return false;
                 }
                 $.ajax({
-                    url: "/Community/Board/UpdateParentComment",
+                    url: "/Community/Data/UpdateParentComment",
                     type: "POST",
                     data: {
                         idx: commentIdx,
@@ -481,7 +481,7 @@
                 if (!ans) return false;
 
                 $.ajax({
-                    url: "/Community/Board/DeleteParentComment",
+                    url: "/Community/Data/DeleteParentComment",
                     type: "POST",
                     data: {
                         idx: commentIdx,
@@ -597,7 +597,7 @@
                 <hr />
                 <div class="row justify-content-center align-items-center">
                     <div class="col-auto">
-                        <a href="/Community/Main/Index" class="btn funcBtn_A">목록으로</a>
+                        <a href="/Community/Home/Main" class="btn funcBtn_A">목록으로</a>
                     </div>
                 </div>
             </div>

@@ -175,7 +175,8 @@
                             });
                         }
                     },
-                    error: function () {
+                    error: function (err) {
+                        console.log("logout : ", err);
                         Swal.fire({
                             icon: 'error',
                             title: '서버 오류',
@@ -219,7 +220,7 @@
                     }
                 })
                 .catch((err) => {
-                    console.log(err);
+                    console.log("loadPosts : ", err);
                     Swal.fire({
                         icon: 'error',
                         title: '서버 오류',

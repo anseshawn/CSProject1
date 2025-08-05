@@ -9,14 +9,14 @@ namespace Project1.Areas.Community.Controllers
 {
     [Area("Community")]
     [Route("[area]/[controller]/[action]")]
-    public class MainController : Controller
+    public class HomeController : Controller
     {
         String? u_id = String.Empty;
-        private readonly MainService mainService = new();
+        private readonly HomeService homeService = new();
         private readonly PageService pageService = new();
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Main()
         {
             u_id = HttpContext.Session.GetString("key_u_id");
             if (u_id == null) return RedirectToAction("RequiredLogin", "Login", new { area = "Identity" });
@@ -55,10 +55,10 @@ namespace Project1.Areas.Community.Controllers
         [HttpGet]
         public async Task<ResponseDTO<BoardListDTO>> BoardList(String CatCls, Int32? Pag, String? Section, String? SearchStr)
         {
-            Int32 TotRecCnt = await mainService.GetBoardListCount(CatCls, Section, SearchStr);
+            Int32 TotRecCnt = await homeService.GetBoardListCount(CatCls, Section, SearchStr);
             Int32 PageSize = 10;
             PageDTO page = pageService.Pagination(Pag ?? 1, PageSize, TotRecCnt, CatCls, Section, SearchStr);
-            List<BoardDTO> board = await mainService.GetBoardList(CatCls, (Pag ?? 1)-1, PageSize, Section, SearchStr);
+            List<BoardDTO> board = await homeService.GetBoardList(CatCls, (Pag ?? 1)-1, PageSize, Section, SearchStr);
             BoardListDTO result = new BoardListDTO
             {
                 BoardList = board,
