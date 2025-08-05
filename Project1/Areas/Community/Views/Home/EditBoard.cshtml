@@ -174,7 +174,7 @@
                 }
 
                 $.ajax({
-                    url: "/Community/Board/GetBoardContent",
+                    url: "/Community/Data/GetBoardContent",
                     type: "GET",
                     data: {
                         idx: idx
@@ -216,7 +216,7 @@
                 }
 
                 $.ajax({
-                    url: "/Community/Board/UpdateBoardContent",
+                    url: "/Community/Data/UpdateBoardContent",
                     type: "POST",
                     data: {
                         CatCls: "01",
@@ -245,7 +245,7 @@
                                 confirmButtonText: "확인"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = "/Community/Board/BoardContent?idx="+idx;
+                                    window.location.href = "/Community/Home/BoardContent?idx="+idx;
                                 }
                             });
                         }

@@ -2,11 +2,10 @@
 using Project1.Contexts.DbConnection;
 using System.Data;
 using System.Data.SqlClient;
-using System.Transactions;
 
 namespace Project1.Areas.Community.Services
 {
-    public class BoardService
+    public class DataService
     {
         private readonly String connStr = AspClassDbConnection.ConnectionString;
 

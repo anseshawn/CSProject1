@@ -232,7 +232,7 @@
                     url: "/Blog/Data/DeleteBoardContent",
                     type: "POST",
                     data: {
-                        CatCls: "01",
+                        CatCls: "02",
                         idx: idx,
                         u_id: u_id
                     },
@@ -252,7 +252,7 @@
                                 confirmButtonText: "확인"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    location.href = "/Community/Main/Index";
+                                    location.href = "/Blog/Home/Main";
                                 }
                             });
                         }
@@ -264,7 +264,7 @@
             }
 
             function loadCommentList() {
-                fetch("/Blog/Data/GetCommentList?CatCls=01&BoardIdx=" + idx, {
+                fetch("/Blog/Data/GetCommentList?CatCls=02&BoardIdx=" + idx, {
                     method: "GET"
                 })
                 .then(response => response.json())
@@ -357,7 +357,7 @@
                     url: "/Blog/Data/SetParentComment",
                     type: "POST",
                     data: {
-                        BoardCatCls: "01",
+                        BoardCatCls: "02",
                         BoardIdx: idx,
                         C_content: C_content,
                         u_id: u_id
@@ -403,7 +403,7 @@
                     type: "POST",
                     data: {
                         parentIdx: commentIdx,
-                        BoardCatCls: "01",
+                        BoardCatCls: "02",
                         BoardIdx: idx,
                         C_content: replyContent,
                         u_id: u_id
@@ -447,7 +447,7 @@
                     type: "POST",
                     data: {
                         idx: commentIdx,
-                        BoardCatCls: "01",
+                        BoardCatCls: "02",
                         BoardIdx: idx,
                         C_content: C_content,
                         u_id: u_id
@@ -488,7 +488,7 @@
                     type: "POST",
                     data: {
                         idx: commentIdx,
-                        BoardCatCls: "01",
+                        BoardCatCls: "02",
                         BoardIdx: idx,
                         u_id: u_id
                     },
@@ -600,7 +600,7 @@
                 <hr />
                 <div class="row justify-content-center align-items-center">
                     <div class="col-auto">
-                        <a href="/Community/Main/Index" class="btn funcBtn_A">목록으로</a>
+                        <a href="/Blog/Home/Main" class="btn funcBtn_A">목록으로</a>
                     </div>
                 </div>
             </div>

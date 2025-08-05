@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Project1.Areas.Community.DTO;
+﻿using Project1.Areas.Community.DTO;
 using Project1.Contexts.DbConnection;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace Project1.Areas.Community.Services
 {
-    public class MainService
+    public class HomeService
     {
         private readonly String connStr = AspClassDbConnection.ConnectionString;
 

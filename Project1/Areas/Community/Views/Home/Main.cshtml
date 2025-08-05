@@ -114,6 +114,53 @@
                 text-decoration: none;
             }
 
+            .B_Author {
+                cursor: pointer;
+            }
+
+            .menu-container {
+                position: relative;
+                display: inline-block;
+            }
+
+            .menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: white;
+                border: 1px solid #ccc;
+                padding: 0.2rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+            }
+
+            .menu li {
+                display: block;
+                margin-right: 10px;
+                margin-bottom: 5px;
+            }
+
+            .menu a {
+                display: block;
+                padding: 5px;
+                text-decoration: none;
+                color: #333;
+            }
+
+            .menu a:hover {
+                color: #6F8BA4;
+            }
+
+            .hidden {
+                display: none;
+            }
         </style>
         <script>
             'use strict';
@@ -136,7 +183,7 @@
                 }
 
                 document.getElementById("writeBtn").onclick = function() {
-                    window.location.href = "/Community/Main/WriteBoard";
+                    window.location.href = "/Community/Home/WriteBoard";
                 }
             }
 
@@ -180,7 +227,7 @@
             }
 
             function loadBoardList(page = 1) {
-                fetch(`/Community/Main/BoardList?CatCls=01&Pag=${page}`, {
+                fetch(`/Community/Home/BoardList?CatCls=01&Pag=${page}`, {
                     method: "GET"
                 })
                 .then(response => response.json())
@@ -223,11 +270,33 @@
                 let listBlock = clone.querySelector(".board_list");
 
                 listBlock.querySelector(".idx").textContent = data.idx;
-                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Main/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
-                listBlock.querySelector(".B_Author").textContent = data.b_author;
+                listBlock.querySelector(".B_title").innerHTML = `<a href="/Community/Home/BoardContent?idx=${data.idx}">${data.b_title}</a>`;
                 listBlock.querySelector(".EnterDate").textContent = data.enterDateTime.split("T")[0];
 
+                let B_Author = listBlock.querySelector(".B_Author");
+                let EnterUser = B_Author.querySelector(".EnterUser");
+                let menu = B_Author.querySelector(".menu");
+
+                EnterUser.textContent = data.b_author;
+                EnterUser.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', function (event) {
+                    if (!B_Author.contains(event.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // 메뉴 링크 동적 설정
+                let blogLink = menu.querySelector("a[href^='javascript:userBlog']");
+                if (blogLink) blogLink.setAttribute("href", `javascript:userBlog('${data.enterUser}')`);
+
                 board.appendChild(clone);
+            }
+
+            function userBlog(u_id) {
+                console.log("u_id : " , u_id);
             }
 
             function renderPagination(pageInfo) {
@@ -336,7 +405,15 @@
                 <li>
                     <div class="idx"></div>
                     <div class="B_title"></div>
-                    <div class="B_Author"></div>
+                    <div class="B_Author menu-container">
+                        <span class="EnterUser"></span>
+                        <div class="menu hidden">
+                            <ul>
+                                <li><a href="javascript:userBlog()">블로그방문</a></li>
+                                <li><a>유저신고</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="EnterDate"></div>
                 </li>
             </ul>

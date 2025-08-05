@@ -125,7 +125,7 @@
                     writeBoard();
                 }
                 document.getElementById("cancelBtn").onclick = function () {
-                    location.href = "/Community/Main/Index";
+                    location.href = "/Community/Home/Main";
                 }
             }
 
@@ -181,7 +181,7 @@
                 }
 
                 $.ajax({
-                    url: "/Community/Board/SetBoardContent",
+                    url: "/Community/Data/SetBoardContent",
                     type: "POST",
                     data: {
                         CatCls: "01",
@@ -209,7 +209,7 @@
                                 confirmButtonText: "확인"
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = "/Community/Main/Index";
+                                    window.location.href = "/Community/Home/Main";
                                 }
                             });
                         }

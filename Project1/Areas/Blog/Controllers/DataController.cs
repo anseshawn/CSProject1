@@ -11,7 +11,7 @@ namespace Project1.Areas.Blog.Controllers
     public class DataController : ControllerBase
     {
         String? u_id = String.Empty;
-        private readonly DataService dataService = new();
+        private readonly Services.DataService dataService = new();
 
         [HttpGet]
         public async Task<ResponseDTO<List<BoardDTO>>> GetBlogList(String CatCls, String? Section, String? SearchStr, Int32 skip = 0, Int32 take = 5)
@@ -55,6 +55,34 @@ namespace Project1.Areas.Blog.Controllers
         {
             List<CommentDTO> result = await dataService.GetCommentList(CatCls, BoardIdx);
             return new ResponseDTO<List<CommentDTO>> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> SetParentComment([FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
+        {
+            Int32 result = await dataService.SetParentComment(BoardCatCls, BoardIdx, C_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> UpdateParentComment([FromForm] Int32? idx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
+        {
+            Int32 result = await dataService.UpdateParentComment(idx, BoardCatCls, BoardIdx, C_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> DeleteParentComment([FromForm] Int32? idx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? u_id)
+        {
+            Int32 result = await dataService.DeleteParentComment(idx, BoardCatCls, BoardIdx, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
+        public async Task<ResponseDTO<Int32>> SetChildComment([FromForm] Int32? parentIdx, [FromForm] String? BoardCatCls, [FromForm] Int32? BoardIdx, [FromForm] String? C_content, [FromForm] String? u_id)
+        {
+            Int32 result = await dataService.SetChildComment(parentIdx, BoardCatCls, BoardIdx, C_content, u_id);
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
         }
 
     }
