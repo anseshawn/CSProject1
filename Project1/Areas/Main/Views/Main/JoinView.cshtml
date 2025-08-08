@@ -253,6 +253,7 @@
                 if (!reg_id.test(u_id)) {
                     document.getElementById("id_feedback").style.display = "block";
                     document.getElementById("memberjoinBtn").disabled = true;
+                    document.getElementById("idDupCheckBtn").disabled = true;
                     document.getElementById("u_id").focus();
                 }
                 else {
@@ -262,7 +263,12 @@
             }
 
             function idDupCheck() {
+                let reg_id = /^[A-Za-z0-9_\.\-]+@@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
                 let u_id = document.getElementById("u_id").value.trim();
+                if (!reg_id.test(u_id))
+                {
+                    return false;
+                }
                 $.ajax({
                     url: "/Main/GetMemberInfo",
                     type: "POST",

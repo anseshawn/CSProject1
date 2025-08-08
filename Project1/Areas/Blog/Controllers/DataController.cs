@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Project1.Areas.Blog.Services;
 using Project1.Areas.Community.DTO;
-using Project1.Areas.Community.Services;
 using Project1.DTO;
 
 namespace Project1.Areas.Blog.Controllers

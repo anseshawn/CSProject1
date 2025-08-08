@@ -16,6 +16,12 @@ namespace Project1.Areas.Blog.Controllers
             return View();
         }
 
+        public ActionResult VisitBlog([FromQuery] String u_id)
+        {
+            ViewData["u_id"] = u_id;
+            return View("Main");
+        }
+
         public ActionResult WritePost()
         {
             u_id = HttpContext.Session.GetString("key_u_id");
