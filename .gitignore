@@ -16,3 +16,8 @@
 /Project1/bin/Debug/net6.0/Project1.dll
 /Project1/bin/Debug/net6.0/Project1.exe
 /Project1/bin/Debug/net6.0/Project1.pdb
+/Project1/obj/Debug/net6.0/staticwebassets.pack.json
+/Project1/obj/Debug/net6.0/staticwebassets/msbuild.Project1.Microsoft.AspNetCore.StaticWebAssets.props
+/Project1/obj/Debug/net6.0/staticwebassets.development.json
+/Project1/obj/Debug/net6.0/staticwebassets.build.json
+/Project1/bin/Debug/net6.0/Project1.staticwebassets.runtime.json

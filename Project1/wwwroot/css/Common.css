@@ -1,0 +1,65 @@
+﻿body, html {
+    height: 100%;
+}
+
+body, .navbar {
+    font-family: 'MS PGothic';
+    background-color: #aaa;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.navbar a:link {
+    color: #DDD;
+    text-decoration: none;
+}
+
+.navbar a:visited {
+    color: #DDD;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.navbar a:active {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.funcBtn_A {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #888;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.funcBtn_A:hover {
+    color: #fff;
+    background: #555;
+}
+
+.funcBtn_sm:hover {
+    color: #fff;
+    background: #555;
+}
+
+.funcBtn_sm {
+    padding: 0.3rem 0.5rem;
+    color: #fff;
+    background: #888;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}

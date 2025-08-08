@@ -19,16 +19,8 @@
         <!-- 커스텀알럿 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" type="text/css" href="~/css/Common.css" />
         <style>
-            body, html {
-                height: 100%;
-            }
-
-            body, .navbar {
-                font-family: 'MS PGothic';
-                background-color: #aaa;
-            }
-
             .center-container {
                 height: 100%;
             }
@@ -36,26 +28,6 @@
             .joinInput {
                 max-width: 50rem;
                 padding: 5rem 5rem;
-            }
-
-            a:link {
-                color: #DDD;
-                text-decoration: none;
-            }
-
-            a:visited {
-                color: #DDD;
-                text-decoration: none;
-            }
-
-            a:hover {
-                color: #FFF;
-                text-decoration: none;
-            }
-
-            a:active {
-                color: #FFF;
-                text-decoration: none;
             }
 
             .input_feedback {
@@ -80,24 +52,10 @@
                 color: #ddd;
             }
 
-            .funcBtn_A {
-                padding: 1rem 3rem;
-                color: #fff;
-                background: #888;
-                font-weight: bold;
-                border: none;
-                border-radius: 10px;
-            }
-
             .funcBtn_B {
                 color: #fff;
                 background: #888;
                 border: none;
-            }
-
-            .funcBtn_A:hover {
-                color: #fff;
-                background: #555;
             }
 
             .funcBtn_B:hover {
@@ -133,6 +91,9 @@
                 }
                 document.getElementById("u_name").oninput = function () {
                     nameCheck();
+                }
+                document.getElementById("u_name").onchange = function () {
+                    nameDupCheck();
                 }
                 document.getElementById("u_id").oninput = function () {
                     idCheckSw = false;
@@ -233,6 +194,36 @@
                 }
             }
 
+            function nameDupCheck() {
+                let u_name = document.getElementById("u_name").value.trim();
+                if(u_name == "") {
+                    document.getElementById("name_dup_feedback").style.display = "none";
+                    return false;
+                }
+                $.ajax({
+                    url: "/Main/GetMemberInfoByName",
+                    type: "POST",
+                    data: {
+                        u_name: u_name
+                    },
+                    success: function (response) {
+                        if (response.data != null && response.data != 0) {
+                            idCheckSw = false;
+                            document.getElementById("name_dup_feedback").style.display = "block";
+                            document.getElementById("memberjoinBtn").disabled = true;
+                            return false;
+                        }
+                        else {
+                            document.getElementById("name_dup_feedback").style.display = "none";
+                            nameCheck();
+                        }
+                    },
+                    error: function (request, status, error) {
+                        console.log(request.responseText, status, error);
+                    }
+                });
+            }
+
             function nameCheck() {
                 let reg_name = /^[a-zA-Z0-9가-힣]{2,10}$/;
                 let u_name = document.getElementById("u_name").value.trim();
@@ -320,6 +311,9 @@
                                 <input class="form-control d-inline-block" type="text" id="u_name" name="u_name" maxlength="10" placeholder="사용할 이름 혹은 닉네임을 적어주세요" required />
                                 <div id="name_feedback" class="input_feedback">
                                     이름은 한글, 영어, 숫자만 사용하여 2~10자까지 가능합니다.
+                                </div>
+                                <div id="name_dup_feedback" class="input_feedback">
+                                    이미 사용중인 이름입니다.
                                 </div>
                             </li>
                             <li>
