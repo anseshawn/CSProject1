@@ -19,16 +19,8 @@
         <!-- 커스텀알럿 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" type="text/css" href="~/css/Common.css" />
         <style>
-            body, html {
-                height: 100%;
-            }
-
-            body, .navbar {
-                font-family: 'MS PGothic';
-                background-color: #aaa;
-            }
-
             .center-container {
                 height: 100%;
             }
@@ -36,26 +28,6 @@
             .contentMain {
                 border: 1px solid #DDD;
                 padding: 10rem 7rem;
-            }
-
-            .navbar a:link {
-                color: #DDD;
-                text-decoration: none;
-            }
-
-            .navbar a:visited {
-                color: #DDD;
-                text-decoration: none;
-            }
-
-            .navbar a:hover {
-                color: #FFF;
-                text-decoration: none;
-            }
-
-            .navbar a:active {
-                color: #FFF;
-                text-decoration: none;
             }
 
             .board_list {
@@ -79,28 +51,6 @@
             .board_list li div {
                 flex: 1;
                 padding: 0 10px;
-            }
-
-            .funcBtn_A {
-                padding: 0.5rem 1rem;
-                color: #fff;
-                background: #888;
-                font-weight: bold;
-                border: none;
-                border-radius: 5px;
-            }
-            .funcBtn_A:hover, .funcBtn_sm:hover {
-                color: #fff;
-                background: #555;
-            }
-            .funcBtn_sm {
-                padding: 0.3rem 0.5rem;
-                color: #fff;
-                background: #888;
-                font-size: 0.8rem;
-                font-weight: bold;
-                border: none;
-                border-radius: 5px;
             }
 
             .board_list a:link {
@@ -307,14 +257,14 @@
 
                 // 메뉴 링크 동적 설정
                 let blogLink = menu.querySelector("a[href^='javascript:userBlog']");
-                if (blogLink) blogLink.setAttribute("href", `javascript:userBlog('${data.enterUser}')`);
+                if (blogLink) blogLink.setAttribute("href", `javascript:userBlog('${data.b_author}')`);
 
                 board.appendChild(clone);
             }
 
-            function userBlog(u_id) {
-                console.log("u_id : " , u_id);
-                window.location = `/Blog/Home/VisitBlog?u_id=${encodeURIComponent(u_id)}`;
+            function userBlog(u_name) {
+                console.log("u_name : ", u_name);
+                window.location = `/Blog/Home/VisitBlog?u_name=${encodeURIComponent(u_name)}`;
             }
 
             function renderPagination(pageInfo) {

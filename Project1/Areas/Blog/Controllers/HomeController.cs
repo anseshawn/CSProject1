@@ -16,10 +16,10 @@ namespace Project1.Areas.Blog.Controllers
             return View();
         }
 
-        public ActionResult VisitBlog([FromQuery] String u_id)
+        public ActionResult VisitBlog([FromQuery] String u_name)
         {
-            ViewData["u_id"] = u_id;
-            return View("Main");
+            ViewData["u_name"] = u_name;
+            return View();
         }
 
         public ActionResult WritePost()

@@ -51,6 +51,18 @@ namespace Project1.Areas.Main.Controllers
         }
 
         [HttpPost]
+        public async Task<ResponseDTO<Int32>> GetMemberInfoByName(String u_name)
+        {
+            Int32 result = 0;
+            MemberDTO? member = await mainService.GetMemberInfoByName(u_name);
+            if (member != null)
+            {
+                result = 1;
+            }
+            return new ResponseDTO<Int32> { Code = 200, Message = "OK", Data = result };
+        }
+
+        [HttpPost]
         public async Task<ActionResult> MemberJoin(MemberDTO? memberDTO)
         {
             Int32 res = 0;
