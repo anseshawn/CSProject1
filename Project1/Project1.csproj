@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Blog\DTO\" />
-    <Folder Include="Pages\Shared\" />
     <Folder Include="wwwroot\js\Common\" />
   </ItemGroup>
 

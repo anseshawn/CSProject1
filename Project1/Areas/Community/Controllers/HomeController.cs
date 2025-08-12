@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project1.Areas.Community.DTO;
 using Project1.Areas.Community.Services;
-using Project1.Areas.Page.DTO;
-using Project1.Areas.Page.Service;
+using Project1.Areas.Pagination.DTO;
+using Project1.Areas.Pagination.Service;
 using Project1.DTO;
 
 namespace Project1.Areas.Community.Controllers

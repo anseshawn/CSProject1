@@ -1,4 +1,4 @@
-﻿namespace Project1.Areas.Page.DTO
+﻿namespace Project1.Areas.Pagination.DTO
 {
     public class PageDTO
     {
