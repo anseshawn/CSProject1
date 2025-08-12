@@ -1,4 +1,4 @@
-﻿using Project1.Areas.Page.DTO;
+﻿using Project1.Areas.Pagination.DTO;
 
 namespace Project1.Areas.Community.DTO
 {

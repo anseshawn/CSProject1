@@ -1,6 +1,6 @@
-﻿using Project1.Areas.Page.DTO;
+﻿using Project1.Areas.Pagination.DTO;
 
-namespace Project1.Areas.Page.Service
+namespace Project1.Areas.Pagination.Service
 {
     public class PageService
     {
