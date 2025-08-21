@@ -430,3 +430,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/Project1/obj/Release/net6.0/Project1.AssemblyInfo.cs
+/Project1/obj/Release/net6.0/Project1.AssemblyInfoInputs.cache
+/Project1/obj/Release/net6.0/Project1.GeneratedMSBuildEditorConfig.editorconfig

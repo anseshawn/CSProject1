@@ -2,7 +2,8 @@
    메인
 *@
 @{
-    String u_id = ViewData["u_id"] as String ?? String.Empty;
+    ViewBag.Title = "커뮤니티 메인";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 @{
     <html>
@@ -124,23 +125,12 @@
         <script>
             'use strict';
 
-            let u_id = '@u_id';
-
             window.onload = function() {
                 eventbind();
                 loadBoardList(1);
             }
 
             function eventbind() {
-                if(u_id == "") {
-                    document.querySelector(".loginMenu").style.display = "flex";
-                    document.querySelector(".logoutMenu").style.display = "none";
-                }
-                else {
-                    document.querySelector(".loginMenu").style.display = "none";
-                    document.querySelector(".logoutMenu").style.display = "flex";
-                }
-
                 document.getElementById("listInitBtn").onclick = function () {
                     loadBoardList();
                 }
@@ -152,45 +142,6 @@
                 document.getElementById("searchBtn").onclick = function () {
                     searchFunc();
                 }
-            }
-
-            function memberLogout() {
-                $.ajax({
-                    url: "/Main/MemberLogout",
-                    type: "POST",
-                    data: {
-                        u_id: u_id
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                //title: '성공',
-                                text: response.message,
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                confirmButtonText: "확인"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = response.redirectUrl;
-                                }
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '실패',
-                                text: response.message
-                            });
-                        }
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: 'error',
-                            title: '서버 오류',
-                            text: '잠시 후 다시 시도해주세요.'
-                        });
-                    }
-                });
             }
 
             function loadBoardList(page = 1) {
@@ -354,27 +305,6 @@
         </script>
     </head>
     <body>
-        <!-- 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/Main/Index">Your Marker</a>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav loginMenu mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Main/LoginView">로그인</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Main/JoinView">회원가입</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav logoutMenu mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link btn" onclick="memberLogout()">로그아웃</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div class="container flex-column center-container">
             <div class="contentMain">
                 <div class="row justify-content-end mt-2 mb-2">

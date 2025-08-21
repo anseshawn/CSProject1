@@ -1,8 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    String u_id = ViewData["u_id"] as String ?? String.Empty;
+﻿@{
+    //String u_id = ViewData["u_id"] as String ?? String.Empty;
+    String login_id = Context.Session.GetString("key_u_id") ?? "";
 }
 @{
     <html>
@@ -48,26 +46,42 @@
         <script>
             'use strict';
 
-            let u_id = '@u_id';
+            let login_id = '@login_id';
             //let isAuthenticated = @User.Identity.IsAuthenticated.ToString().ToLower();
-
+            /*
             window.onload = function () {
+                console.log("현재 u_id : ", u_id);
                 if (u_id == "") {
+                    console.log("로그인 전");
                     document.querySelector(".loginMenu").style.display = "flex";
                     document.querySelector(".logoutMenu").style.display = "none";
                 }
                 else {
+                    console.log("로그인 후");
                     document.querySelector(".loginMenu").style.display = "none";
                     document.querySelector(".logoutMenu").style.display = "flex";
                 }
             }
+            */
+
+            document.addEventListener("DOMContentLoaded", function () {
+                if (login_id === "") {
+                    console.log("로그인 전");
+                    document.querySelector(".loginMenu").style.display = "flex";
+                    document.querySelector(".logoutMenu").style.display = "none";
+                } else {
+                    console.log("로그인 후");
+                    document.querySelector(".loginMenu").style.display = "none";
+                    document.querySelector(".logoutMenu").style.display = "flex";
+                }
+            });
 
             function memberLogout() {
                 $.ajax({
                     url: "/Main/MemberLogout",
                     type: "POST",
                     data: {
-                        u_id: u_id
+                        u_id: login_id
                     },
                     success: function (response) {
                         if (response.success) {
