@@ -2,6 +2,8 @@
    메인
 *@
 @{
+    ViewBag.Title = "글쓰기 - 블로그";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
     String u_id = ViewData["u_id"] as String ?? String.Empty;
 }
 @{
@@ -70,14 +72,6 @@
             }
 
             function eventbind() {
-                if(u_id == "") {
-                    document.querySelector(".loginMenu").style.display = "flex";
-                    document.querySelector(".logoutMenu").style.display = "none";
-                }
-                else {
-                    document.querySelector(".loginMenu").style.display = "none";
-                    document.querySelector(".logoutMenu").style.display = "flex";
-                }
                 $('#B_content').summernote({
                     height: 300,                 // set editor height
                     minHeight: null,             // set minimum height of editor
@@ -90,45 +84,6 @@
                 document.getElementById("cancelBtn").onclick = function () {
                     location.href = "/Blog/Home/Main";
                 }
-            }
-
-            function memberLogout() {
-                $.ajax({
-                    url: "/Main/MemberLogout",
-                    type: "POST",
-                    data: {
-                        u_id: u_id
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                //title: '성공',
-                                text: response.message,
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                confirmButtonText: "확인"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = response.redirectUrl;
-                                }
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: '실패',
-                                text: response.message
-                            });
-                        }
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: 'error',
-                            title: '서버 오류',
-                            text: '잠시 후 다시 시도해주세요.'
-                        });
-                    }
-                });
             }
 
             function writeBoard() {

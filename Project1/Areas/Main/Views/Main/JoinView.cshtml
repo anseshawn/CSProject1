@@ -2,6 +2,8 @@
    회원가입
 *@
 @{
+    ViewBag.Title = "회원가입";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
     String vd_alert = ViewData["alertStr"] as String ?? String.Empty;
 }
 @{
@@ -285,22 +287,6 @@
         </script>
     </head>
     <body>
-        <!-- 네비게이션 바 -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/Main/Index">Your Marker</a>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Main/LoginView">로그인</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Main/JoinView">회원가입</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <div class="container d-flex flex-column justify-content-center align-items-center center-container">
             <div class="joinInput">
                 <form name="joinForm">
